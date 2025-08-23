@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "TypeScript 5.0 重大更新",
+    "description": "TypeScript 5.0 是一个里程碑式的版本，带来了装饰器支持、const 类型参数、多配置文件支持等重要改进。",
+    "keywords": ["TypeScript", "编程语言", "类型系统", "装饰器", "性能优化"],
+    "author": "技术团队",
+    "publishDate": "发布于8月8号",
+    "readTime": "4 分钟",
+    "tags": ["TypeScript", "编程语言", "类型系统"],
+    "category": "技术",
+    "excerpt": "深入了解 TypeScript 5.0 的重大更新，包括装饰器支持、const 类型参数和性能优化。"
+  },
+  "content": {
+    "introduction": "TypeScript 5.0 是一个里程碑式的版本，带来了许多重要的改进和新特性。",
+    "sections": [
+      {
+        "title": "核心改进",
+        "subsections": [
+          {
+            "title": "1. 装饰器支持",
+            "content": "正式支持 ECMAScript 装饰器提案，提供更好的元编程能力。"
+          },
+          {
+            "title": "2. const 类型参数",
+            "content": "新的 const 类型参数修饰符，提供更精确的类型推断。"
+          },
+          {
+            "title": "3. 支持多配置文件",
+            "content": "可以在同一个项目中使用多个 tsconfig.json 文件。"
+          },
+          {
+            "title": "4. 性能优化",
+            "content": "编译速度提升，内存使用优化。"
+          }
+        ]
+      },
+      {
+        "title": "新语法特性",
+        "content": "```typescript\n// const 类型参数\nfunction identity<const T>(arg: T): T {\n  return arg\n}\n\n// 装饰器\n@sealed\nclass Example {\n  @readonly\n  property = 'value'\n}\n```"
+      },
+      {
+        "title": "迁移建议",
+        "content": "1. 逐步升级依赖\n2. 检查类型定义\n3. 测试构建流程"
+      }
+    ],
+    "conclusion": "TypeScript 5.0 为开发者提供了更强大的类型系统和更好的开发体验。"
+  }
+}

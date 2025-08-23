@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "React Server Components 深度解析",
+    "description": "深入探讨 React Server Components 的工作原理、使用场景和最佳实践，掌握现代 React 开发的核心技术。",
+    "keywords": ["React", "Server Components", "SSR", "前端架构", "性能优化"],
+    "author": "前端团队",
+    "publishDate": "发布于8月12号",
+    "readTime": "7 分钟",
+    "tags": ["React", "Server Components", "SSR", "前端架构"],
+    "category": "前端",
+    "excerpt": "全面了解 React Server Components 的革命性特性，提升应用性能和开发体验。"
+  },
+  "content": {
+    "introduction": "React Server Components 是 React 18 引入的革命性特性，允许组件在服务器端渲染，带来更好的性能和用户体验。",
+    "sections": [
+      {
+        "title": "核心概念",
+        "subsections": [
+          {
+            "title": "服务器组件 vs 客户端组件",
+            "content": "服务器组件在服务器端执行，减少客户端 JavaScript 包大小；客户端组件保持交互性。"
+          },
+          {
+            "title": "零包大小",
+            "content": "服务器组件及其依赖不会被打包到客户端，显著减少应用体积。"
+          },
+          {
+            "title": "直接数据访问",
+            "content": "可以直接在组件中访问数据库、文件系统等后端资源。"
+          }
+        ]
+      },
+      {
+        "title": "使用场景",
+        "content": "- 数据密集型页面\n- SEO 要求高的内容\n- 静态内容展示\n- 复杂的数据聚合\n- 减少客户端计算负担"
+      },
+      {
+        "title": "最佳实践",
+        "content": "1. 合理划分服务器和客户端组件\n2. 避免在服务器组件中使用浏览器 API\n3. 利用 Suspense 处理异步数据\n4. 优化数据获取策略\n5. 考虑缓存和性能"
+      }
+    ],
+    "conclusion": "React Server Components 为现代 Web 开发提供了新的可能性，是构建高性能应用的重要工具。"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "Next.js 15 新特性解析",
+    "description": "Next.js 15 带来了许多令人兴奋的新特性和改进，包括 React 19 支持、Turbopack 稳定版、改进的缓存策略等。",
+    "keywords": ["Next.js", "React", "前端开发", "性能优化", "Turbopack"],
+    "author": "技术团队",
+    "publishDate": "发布于8月10号",
+    "readTime": "5 分钟",
+    "tags": ["Next.js", "React", "前端开发", "性能优化"],
+    "category": "技术",
+    "excerpt": "深入解析 Next.js 15 的新特性，包括 React 19 支持、Turbopack 稳定版、改进的缓存策略和增强的类型安全。"
+  },
+  "content": {
+    "blocks": [
+      {
+        "type": "title",
+        "id": "introduction-title",
+        "data": {
+          "text": "概述",
+          "level": 2
+        }
+      },
+      {
+        "type": "content",
+        "id": "introduction-content",
+        "data": {
+          "text": "Next.js 15 带来了许多令人兴奋的新特性和改进。本文将深入解析这些新功能，包括 React 19 支持、Turbopack 稳定版、改进的缓存策略和增强的类型安全等核心特性。"
+        }
+      },
+      {
+        "type": "title",
+        "id": "features-title",
+        "data": {
+          "text": "主要新特性",
+          "level": 2
+        }
+      },
+      {
+        "type": "content",
+        "id": "react19-content",
+        "data": {
+          "text": "Next.js 15 完全支持 React 19，包括新的并发特性和服务器组件改进。这为开发者提供了更强大的组件渲染能力和更好的性能优化选项。"
+        }
+      },
+      {
+        "type": "content",
+        "id": "turbopack-content",
+        "data": {
+          "text": "全新的构建工具 Turbopack 现已稳定，提供更快的开发体验。相比传统的 Webpack，Turbopack 在构建速度和热重载方面都有显著提升。"
+        }
+      },
+      {
+        "type": "content",
+        "id": "cache-content",
+        "data": {
+          "text": "新的缓存机制提供更精细的控制和更好的性能。开发者可以更灵活地配置缓存策略，优化应用的加载速度。"
+        }
+      },
+      {
+        "type": "content",
+        "id": "typescript-content",
+        "data": {
+          "text": "更好的 TypeScript 集成和类型推断，让开发过程更加安全可靠，减少运行时错误的可能性。"
+        }
+      },
+      {
+        "type": "title",
+        "id": "migration-title",
+        "data": {
+          "text": "迁移指南",
+          "level": 2
+        }
+      },
+      {
+        "type": "content",
+        "id": "migration-steps",
+        "data": {
+          "text": "从 Next.js 14 升级到 15 需要以下步骤：首先更新依赖包，然后检查配置文件兼容性，最后全面测试应用功能。"
+        }
+      },
+      {
+        "type": "code",
+        "id": "migration-code",
+        "data": {
+          "language": "bash",
+          "code": "# 更新到 Next.js 15\nnpm install next@15\n\n# 或者使用 yarn\nyarn add next@15"
+        }
+      },
+      {
+        "type": "title",
+        "id": "performance-title",
+        "data": {
+          "text": "性能提升",
+          "level": 2
+        }
+      },
+      {
+        "type": "content",
+        "id": "performance-content",
+        "data": {
+          "text": "Next.js 15 在性能方面带来了显著改进：构建速度提升 40%，热重载速度提升 60%，包体积减少 20%。这些改进使得 Next.js 15 成为构建现代 Web 应用的最佳选择。"
+        }
+      },
+      {
+        "type": "title",
+        "id": "conclusion-title",
+        "data": {
+          "text": "总结",
+          "level": 2
+        }
+      },
+      {
+        "type": "content",
+        "id": "conclusion-content",
+        "data": {
+          "text": "Next.js 15 为开发者提供了更强大的功能和更好的开发体验，是升级的绝佳时机。无论是性能提升、开发体验改善，还是新特性的引入，都让这个版本值得期待和使用。"
+        }
+      }
+    ]
+  }
+}
