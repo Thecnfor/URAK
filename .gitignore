@@ -1,4 +1,6 @@
 .trae
+uiok/node_modules
+psx/app/__pycache__
 __pycache__/
 *.pyc
 *.pyo
