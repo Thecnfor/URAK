@@ -5,9 +5,22 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import time
 from datetime import datetime
+from contextlib import asynccontextmanager
 
 from app.api.v1 import blog, health
 from app.core.config import settings
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """应用生命周期管理"""
+    # 启动时执行
+    print("🚀 URAK Blog API 服务启动中...")
+    yield
+    # 关闭时执行
+    print("🛑 URAK Blog API 服务正在关闭...")
+    print("✅ 资源清理完成，服务已优雅退出")
+
 
 # 创建FastAPI应用实例
 app = FastAPI(
@@ -16,6 +29,7 @@ app = FastAPI(
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
+    lifespan=lifespan,
 )
 
 # 配置CORS中间件

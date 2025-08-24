@@ -27,10 +27,10 @@ class Settings(BaseSettings):
     ]
     
     # 数据存储配置
-    DOCS_DIR: str = str(Path(__file__).parent.parent.parent / "docs")
-    CATEGORIES_DIR: str = str(Path(__file__).parent.parent.parent / "docs" / "categories")
-    CONTENT_DIR: str = str(Path(__file__).parent.parent.parent / "docs" / "content")
-    BLOG_DATA_FILE: str = str(Path(__file__).parent.parent.parent / "docs" / "blog-data.json")
+    DOCS_DIR: str = str(Path(__file__).parent.parent.parent.parent / "docs")
+    CATEGORIES_DIR: str = str(Path(__file__).parent.parent.parent.parent / "docs" / "categories")
+    CONTENT_DIR: str = str(Path(__file__).parent.parent.parent.parent / "docs" / "content")
+    BLOG_DATA_FILE: str = str(Path(__file__).parent.parent.parent.parent / "docs" / "blog-data.json")
     
     # 缓存配置
     CACHE_TTL: int = 60  # 缓存时间（秒）
