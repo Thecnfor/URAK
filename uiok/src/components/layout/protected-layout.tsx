@@ -2,8 +2,7 @@
 
 import { useEffect, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAppSelector } from '@/lib/store';
-import { selectIsAuthenticated, selectIsLoading, selectUser } from '@/lib/features/auth/authSlice';
+import { useAppSelector } from '@/store/hooks';
 
 interface ProtectedLayoutProps {
   children: ReactNode;
@@ -17,9 +16,9 @@ export function ProtectedLayout({
   fallback = <div className="flex items-center justify-center min-h-screen">加载中...</div>
 }: ProtectedLayoutProps) {
   const router = useRouter();
-  const isAuthenticated = useAppSelector(selectIsAuthenticated);
-  const isLoading = useAppSelector(selectIsLoading);
-  const user = useAppSelector(selectUser);
+  const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
+  const isLoading = useAppSelector((state) => state.auth.isLoading);
+  const user = useAppSelector((state) => state.auth.user);
 
   useEffect(() => {
     // 如果未认证且不在加载中，重定向到登录页

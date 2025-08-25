@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import appReducer from './features/app/appSlice';
-import authReducer from './features/auth/authSlice';
+import authReducer from '../store/slices/authSlice';
 
 // 创建store配置
 export const store = configureStore({

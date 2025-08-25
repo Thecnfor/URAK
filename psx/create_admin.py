@@ -44,15 +44,15 @@ async def create_admin_user():
             if existing_user:
                 # 更新现有用户的密码
                 import secrets
-                hashed_password = pwd_context.hash("admin123")
+                hashed_password = pwd_context.hash("ad283458063A*")
                 existing_user.password_hash = hashed_password
                 await session.commit()
-                print("管理员用户密码已更新: xrak/admin123")
+                print("管理员用户密码已更新: xrak/ad283458063A*")
                 return
             
             # 创建管理员用户
             import secrets
-            hashed_password = pwd_context.hash("admin123")
+            hashed_password = pwd_context.hash("ad283458063A*")
             salt = secrets.token_hex(16)  # 生成随机盐值
             
             admin_user = User(

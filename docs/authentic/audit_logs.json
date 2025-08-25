@@ -5026,11 +5026,645 @@
       },
       "session_id": null,
       "request_id": null
+    },
+    {
+      "id": "01cf8293-33bd-454a-af8e-20fabb9ed949",
+      "timestamp": "2025-08-25T10:29:13.942897+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "admin",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('83ab6798-e251-494a-b9aa-4ac6e693d092', '127.0.0.1', 'node', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 10, 29, 13, 930608), datetime.datetime(2025, 8, 25, 10, 29, 13, 931059, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "timestamp": "2025-08-25T10:29:13.942872+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "f50cb225-1238-46d3-9a8e-a3cfb22f0073",
+      "timestamp": "2025-08-25T10:29:13.948104+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 6,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "c7e3070a-566c-4cf7-8aff-83facb3ebf55",
+      "timestamp": "2025-08-25T10:29:13.957677+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('83ab6798-e251-494a-b9aa-4ac6e693d092', '127.0.0.1', 'node', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 10, 29, 13, 930608), datetime.datetime(2025, 8, 25, 10, 29, 13, 931059, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b58fc0e8-2e71-4504-bf49-8a6fbbd3bbe3",
+      "timestamp": "2025-08-25T10:33:42.407972+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:33:42.407951+00:00"
+      },
+      "session_id": "bcf5ca43-bd92-47ed-9a44-2604c5dcd773",
+      "request_id": null
+    },
+    {
+      "id": "dc4751d2-6753-49d5-b1dd-10f5635ccdd9",
+      "timestamp": "2025-08-25T10:37:41.757366+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:37:41.757269+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "ce92d74e-23ba-44de-b4be-8b89d09d51ed",
+      "timestamp": "2025-08-25T10:37:43.939514+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:37:43.939481+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "6865c705-2700-44a9-b45e-b61b00114d1f",
+      "timestamp": "2025-08-25T10:48:24.597987+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:48:24.597858+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "33fc786e-6ec1-446d-bd51-99f90dbf3e5a",
+      "timestamp": "2025-08-25T10:48:26.745646+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:48:26.745610+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "8d496f2e-429c-408d-903a-284d92117f7e",
+      "timestamp": "2025-08-25T10:51:22.451469+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:51:22.451424+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "927b252c-7d21-47b7-bb44-36d55fbc5d04",
+      "timestamp": "2025-08-25T10:51:24.740100+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:51:24.740048+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "5f056fec-84e3-441c-86cc-254421b39a33",
+      "timestamp": "2025-08-25T10:51:25.377028+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:51:25.376993+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "a8c64f58-a193-4b2e-8d85-8c828817538e",
+      "timestamp": "2025-08-25T10:51:27.587950+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:51:27.587895+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "e1262ef2-edd5-4d93-8aa3-97a6e9997264",
+      "timestamp": "2025-08-25T10:51:29.764990+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:51:29.764957+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "23bb0165-eb97-4573-880f-edea179fb228",
+      "timestamp": "2025-08-25T10:51:31.836115+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:51:31.836082+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "dba07b4d-9907-4809-a692-fa1624bba61c",
+      "timestamp": "2025-08-25T10:51:36.427534+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:51:36.427434+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "c811addf-df4d-4aad-b752-0fce8fc3ed32",
+      "timestamp": "2025-08-25T10:51:38.615455+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:51:38.615418+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "cdcb30b9-3191-43d5-88be-c26a26f70193",
+      "timestamp": "2025-08-25T10:51:40.839641+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:51:40.839609+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "be58ce18-ceae-40f9-888c-723a74b7347a",
+      "timestamp": "2025-08-25T10:51:42.607627+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:51:42.607511+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "6479f041-a73e-4b59-b147-f5c8a316ef82",
+      "timestamp": "2025-08-25T10:52:30.150505+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:52:30.150454+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "c5d20a48-9c18-4134-a0e9-dbe4be18a1c1",
+      "timestamp": "2025-08-25T10:52:41.233488+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:52:41.233465+00:00"
+      },
+      "session_id": "e98dc9f6-bffb-4ccf-91ed-9b68667c5735",
+      "request_id": null
+    },
+    {
+      "id": "86c3e506-0fde-45c5-a384-cd599f3ce67e",
+      "timestamp": "2025-08-25T10:52:48.479592+00:00",
+      "event_type": "csrf_attack_detected",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "csrf_attack",
+      "result": "blocked",
+      "details": {
+        "error": "CSRF token required",
+        "provided_token": false
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "4c24001e-66a6-4ea0-a03e-fdef7175d995",
+      "timestamp": "2025-08-25T10:52:48.487428+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_403",
+      "result": "failed",
+      "details": {
+        "status_code": 403,
+        "detail": "CSRF token validation failed",
+        "path": "/api/auth/logout",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "206f1078-48f4-4b7c-a876-f60965a8e66e",
+      "timestamp": "2025-08-25T10:53:54.876526+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "123",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Authentication failed",
+        "timestamp": "2025-08-25T10:53:54.876496+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b14caf51-7b47-4b34-8c69-180f12b07ea2",
+      "timestamp": "2025-08-25T10:53:54.882086+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Authentication failed",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "fd791e5e-5447-4634-a86a-4a3a968e65df",
+      "timestamp": "2025-08-25T10:54:03.187238+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "123",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Authentication failed",
+        "timestamp": "2025-08-25T10:54:03.187200+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "429094b1-2881-4ce0-a0ee-9fedd9c9c887",
+      "timestamp": "2025-08-25T10:54:03.194184+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Authentication failed",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "848677fb-0554-4ac2-acf4-a6fa7105c491",
+      "timestamp": "2025-08-25T10:57:06.147535+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:57:06.147405+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "e676a027-1060-4166-ab95-1e332e96420c",
+      "timestamp": "2025-08-25T10:57:18.054528+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:57:18.054491+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "09217d7e-59b7-48aa-a5ed-b3b9f356a0b2",
+      "timestamp": "2025-08-25T11:07:27.891225+00:00",
+      "event_type": "user_created",
+      "severity": "low",
+      "user_id": "592a8299-8117-43a5-8cd0-5d1ef9d3bd00",
+      "username": "123",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_registration",
+      "result": "success",
+      "details": {
+        "email": "shizurak_urak@outlook.com",
+        "role": "user"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "2229eff3-a5e6-4360-aa3d-3983faf85da3",
+      "timestamp": "2025-08-25T11:08:12.106596+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T11:08:12.106514+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "bde21c47-06b6-46d5-b6c1-c17e330cb7bb",
+      "timestamp": "2025-08-25T11:08:14.286554+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T11:08:14.286519+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "0600faae-0795-45e9-bb36-14a2c98c0ae0",
+      "timestamp": "2025-08-25T11:08:16.421890+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T11:08:16.421776+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "df623d73-04cd-48ad-aebb-cc106fd2535b",
+      "timestamp": "2025-08-25T11:08:18.544154+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T11:08:18.544113+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "0bcb3396-19a4-457e-b70e-2081d80399ca",
+      "timestamp": "2025-08-25T11:08:37.300250+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "592a8299-8117-43a5-8cd0-5d1ef9d3bd00",
+      "username": "123",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T11:08:37.300200+00:00"
+      },
+      "session_id": "aec6a67c-f4b4-4f2d-b980-16094d4e1732",
+      "request_id": null
     }
   ],
   "metadata": {
-    "total_events": 266,
-    "last_updated": "2025-08-25T10:28:14.826014+00:00",
+    "total_events": 300,
+    "last_updated": "2025-08-25T11:08:37.304015+00:00",
     "version": "1.0"
   }
 }

@@ -1,34 +1,28 @@
-// 表单验证工具函数
-
-export interface ValidationResult {
-  isValid: boolean;
-  errors: string[];
-}
-
-export interface LoginFormData {
-  username: string;
-  password: string;
-}
-
-export interface RegisterFormData {
-  username: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
+import { 
+  VALIDATION_RULES, 
+  ERROR_MESSAGES, 
+  FIELD_NAMES,
+  ValidationResult,
+  FieldValidationRule,
+  LoginFormData,
+  RegisterFormData,
+  FieldErrors,
+  TouchedFields
+} from '../config/validation';
 
 // 验证用户名
 export const validateUsername = (username: string): ValidationResult => {
   const errors: string[] = [];
+  const rules = VALIDATION_RULES.username;
   
   if (!username) {
-    errors.push('用户名不能为空');
-  } else if (username.length < 3) {
-    errors.push('用户名至少需要3个字符');
-  } else if (username.length > 50) {
-    errors.push('用户名不能超过50个字符');
-  } else if (!/^[a-zA-Z0-9_]+$/.test(username)) {
-    errors.push('用户名只能包含字母、数字和下划线');
+    errors.push(ERROR_MESSAGES.required(FIELD_NAMES.username));
+  } else if (username.length < rules.minLength) {
+    errors.push(ERROR_MESSAGES.minLength(FIELD_NAMES.username, rules.minLength));
+  } else if (username.length > rules.maxLength) {
+    errors.push(ERROR_MESSAGES.maxLength(FIELD_NAMES.username, rules.maxLength));
+  } else if (!rules.pattern.test(username)) {
+    errors.push(ERROR_MESSAGES.pattern(rules.patternMessage));
   }
   
   return {
@@ -40,13 +34,16 @@ export const validateUsername = (username: string): ValidationResult => {
 // 验证密码
 export const validatePassword = (password: string): ValidationResult => {
   const errors: string[] = [];
+  const rules = VALIDATION_RULES.password;
   
   if (!password) {
-    errors.push('密码不能为空');
-  } else if (password.length < 8) {
-    errors.push('密码至少需要8个字符');
-  } else if (password.length > 128) {
-    errors.push('密码不能超过128个字符');
+    errors.push(ERROR_MESSAGES.required(FIELD_NAMES.password));
+  } else if (password.length < rules.minLength) {
+    errors.push(ERROR_MESSAGES.minLength(FIELD_NAMES.password, rules.minLength));
+  } else if (password.length > rules.maxLength) {
+    errors.push(ERROR_MESSAGES.maxLength(FIELD_NAMES.password, rules.maxLength));
+  } else if (!rules.pattern.test(password)) {
+    errors.push(ERROR_MESSAGES.pattern(rules.patternMessage));
   }
   
   return {
@@ -58,13 +55,14 @@ export const validatePassword = (password: string): ValidationResult => {
 // 验证邮箱
 export const validateEmail = (email: string): ValidationResult => {
   const errors: string[] = [];
+  const rules = VALIDATION_RULES.email;
   
   if (!email) {
-    errors.push('邮箱不能为空');
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    errors.push('邮箱格式不正确');
-  } else if (email.length > 100) {
-    errors.push('邮箱不能超过100个字符');
+    errors.push(ERROR_MESSAGES.required(FIELD_NAMES.email));
+  } else if (email.length > rules.maxLength) {
+    errors.push(ERROR_MESSAGES.maxLength(FIELD_NAMES.email, rules.maxLength));
+  } else if (!rules.pattern.test(email)) {
+    errors.push(ERROR_MESSAGES.pattern(rules.patternMessage));
   }
   
   return {
@@ -78,9 +76,9 @@ export const validateConfirmPassword = (password: string, confirmPassword: strin
   const errors: string[] = [];
   
   if (!confirmPassword) {
-    errors.push('确认密码不能为空');
+    errors.push(ERROR_MESSAGES.required(FIELD_NAMES.confirmPassword));
   } else if (password !== confirmPassword) {
-    errors.push('两次输入的密码不一致');
+    errors.push(ERROR_MESSAGES.passwordMismatch);
   }
   
   return {
@@ -125,32 +123,26 @@ export const validateRegisterForm = (formData: RegisterFormData): ValidationResu
   };
 };
 
-// 通用字段验证
-export const validateField = (value: string, fieldName: string, rules: {
-  required?: boolean;
-  minLength?: number;
-  maxLength?: number;
-  pattern?: RegExp;
-  patternMessage?: string;
-}): ValidationResult => {
+// 通用字段验证函数
+export const validateField = (value: string, fieldName: string, rules: FieldValidationRule): ValidationResult => {
   const errors: string[] = [];
   
   if (rules.required && !value) {
-    errors.push(`${fieldName}不能为空`);
+    errors.push(ERROR_MESSAGES.required(fieldName));
     return { isValid: false, errors };
   }
   
   if (value) {
     if (rules.minLength && value.length < rules.minLength) {
-      errors.push(`${fieldName}至少需要${rules.minLength}个字符`);
+      errors.push(ERROR_MESSAGES.minLength(fieldName, rules.minLength));
     }
     
     if (rules.maxLength && value.length > rules.maxLength) {
-      errors.push(`${fieldName}不能超过${rules.maxLength}个字符`);
+      errors.push(ERROR_MESSAGES.maxLength(fieldName, rules.maxLength));
     }
     
     if (rules.pattern && !rules.pattern.test(value)) {
-      errors.push(rules.patternMessage || `${fieldName}格式不正确`);
+      errors.push(ERROR_MESSAGES.pattern(rules.patternMessage || `${fieldName}格式不正确`));
     }
   }
   
@@ -158,4 +150,75 @@ export const validateField = (value: string, fieldName: string, rules: {
     isValid: errors.length === 0,
     errors
   };
+};
+
+// 获取字段验证规则
+export const getFieldValidationRules = (fieldName: keyof typeof VALIDATION_RULES): FieldValidationRule => {
+  const rules = VALIDATION_RULES[fieldName];
+  
+  // 确保安全访问属性，避免 undefined 错误
+  return {
+    required: rules.required ?? true,
+    minLength: rules.minLength,
+    maxLength: rules.maxLength,
+    pattern: rules.pattern,
+    patternMessage: rules.patternMessage
+  };
+};
+
+// 统一的错误处理函数
+export const handleApiError = (error: any): string => {
+  if (typeof error === 'string') {
+    return error;
+  }
+  
+  if (error?.message) {
+    // 过滤掉复杂的数据库错误信息
+    if (error.message.includes('SQLAlchemy') || error.message.includes('[SQL:')) {
+      return ERROR_MESSAGES.serverError;
+    }
+    return String(error.message);
+  }
+  
+  // 处理FastAPI验证错误格式
+  if (error?.detail) {
+    // 如果detail是数组（FastAPI验证错误）
+    if (Array.isArray(error.detail)) {
+      const validationErrors = error.detail.map((err: any) => {
+        if (err.msg) {
+          return err.msg;
+        }
+        return '验证失败';
+      });
+      return validationErrors.join('; ');
+    }
+    // 如果detail是字符串
+    if (typeof error.detail === 'string') {
+      return error.detail;
+    }
+    // 如果detail是对象，尝试转换为字符串
+    return String(error.detail);
+  }
+  
+  // 网络错误
+  if (error instanceof TypeError && error.message.includes('fetch')) {
+    return ERROR_MESSAGES.networkError;
+  }
+  
+  // 如果是对象，尝试提取有用信息
+  if (typeof error === 'object' && error !== null) {
+    // 尝试获取常见的错误字段
+    const errorText = error.error || error.msg || error.description || error.reason;
+    if (errorText) {
+      return String(errorText);
+    }
+    
+    // 如果有状态码，包含在错误信息中
+    if (error.status || error.statusCode) {
+      const status = error.status || error.statusCode;
+      return `请求失败 (${status}): ${ERROR_MESSAGES.serverError}`;
+    }
+  }
+  
+  return ERROR_MESSAGES.unknownError;
 };

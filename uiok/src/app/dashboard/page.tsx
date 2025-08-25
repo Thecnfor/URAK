@@ -1,13 +1,12 @@
 'use client';
 
 import { ProtectedLayout } from '@/components/layout/protected-layout';
-import { useAppSelector, useAppDispatch } from '@/lib/store';
-import { selectUser } from '@/lib/features/auth/authSlice';
-import { logoutUser } from '@/lib/features/auth/authSlice';
+import { useAppSelector, useAppDispatch } from '@/store/hooks';
+import { logoutUser } from '@/store/slices/authSlice';
 import { useRouter } from 'next/navigation';
 
 export default function DashboardPage() {
-  const user = useAppSelector(selectUser);
+  const user = useAppSelector((state) => state.auth.user);
   const dispatch = useAppDispatch();
   const router = useRouter();
 

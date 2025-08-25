@@ -9,7 +9,8 @@ import {
   fetchCSRFToken, 
   clearError
 } from '@/store/slices/authSlice';
-import { validateLoginForm, validateField, type LoginFormData } from '@/utils/validation';
+import { validateLoginForm, validateField, getFieldValidationRules, type LoginFormData } from '@/utils/validation';
+import { FIELD_NAMES, FieldErrors, TouchedFields } from '@/config/validation';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -26,18 +27,12 @@ export default function LoginPage() {
     password: '',
   });
   
-  const [fieldErrors, setFieldErrors] = useState<{
-    username: string[];
-    password: string[];
-  }>({
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({
     username: [],
     password: [],
   });
   
-  const [touched, setTouched] = useState<{
-    username: boolean;
-    password: boolean;
-  }>({
+  const [touched, setTouched] = useState<TouchedFields>({
     username: false,
     password: false,
   });
@@ -91,25 +86,12 @@ export default function LoginPage() {
   };
   
   const validateSingleField = (fieldName: keyof LoginFormData, value: string) => {
-    let validation;
+    if (fieldName !== 'username' && fieldName !== 'password') return;
     
-    if (fieldName === 'username') {
-      validation = validateField(value, '用户名', {
-        required: true,
-        minLength: 3,
-        maxLength: 50,
-        pattern: /^[a-zA-Z0-9_]+$/,
-        patternMessage: '用户名只能包含字母、数字和下划线'
-      });
-    } else if (fieldName === 'password') {
-      validation = validateField(value, '密码', {
-        required: true,
-        minLength: 6,
-        maxLength: 100
-      });
-    } else {
-      return;
-    }
+    const displayName = FIELD_NAMES[fieldName];
+    const rules = getFieldValidationRules(fieldName);
+    
+    const validation = validateField(value, displayName, rules);
     
     setFieldErrors(prev => ({
       ...prev,
@@ -131,19 +113,11 @@ export default function LoginPage() {
     
     if (!validation.isValid) {
       // 设置字段错误
-      const usernameValidation = validateField(formData.username, '用户名', {
-        required: true,
-        minLength: 3,
-        maxLength: 50,
-        pattern: /^[a-zA-Z0-9_]+$/,
-        patternMessage: '用户名只能包含字母、数字和下划线'
-      });
+      const usernameRules = getFieldValidationRules('username');
+      const passwordRules = getFieldValidationRules('password');
       
-      const passwordValidation = validateField(formData.password, '密码', {
-        required: true,
-        minLength: 6,
-        maxLength: 100
-      });
+      const usernameValidation = validateField(formData.username, FIELD_NAMES.username, usernameRules);
+      const passwordValidation = validateField(formData.password, FIELD_NAMES.password, passwordRules);
       
       setFieldErrors({
         username: usernameValidation.errors,

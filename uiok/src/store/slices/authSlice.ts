@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { LoginFormData, RegisterFormData } from '../../config/validation';
+import { handleApiError } from '../../utils/validation';
 
 // 用户接口定义
 export interface User {
@@ -55,7 +57,7 @@ export const loginUser = createAsyncThunk(
 
       if (!loginResponse.ok) {
         const errorData = await loginResponse.json();
-        throw new Error(errorData.detail || errorData.error || '登录失败');
+        throw new Error(handleApiError(errorData));
       }
 
       const userData = await loginResponse.json();
@@ -67,7 +69,7 @@ export const loginUser = createAsyncThunk(
         refreshToken: null // 不再使用localStorage存储
       };
     } catch (error) {
-      return rejectWithValue(error instanceof Error ? error.message : '登录失败');
+      return rejectWithValue(handleApiError(error));
     }
   }
 );
@@ -92,7 +94,7 @@ export const validateSession = createAsyncThunk(
       const userData = await response.json();
       return userData.user_info || userData; // 适配后端响应格式
     } catch (error) {
-      return rejectWithValue(error instanceof Error ? error.message : '会话验证失败');
+      return rejectWithValue(handleApiError(error));
     }
   }
 );
@@ -116,7 +118,7 @@ export const logoutUser = createAsyncThunk(
 
       return true;
     } catch (error) {
-      return rejectWithValue(error instanceof Error ? error.message : '登出失败');
+      return rejectWithValue(handleApiError(error));
     }
   }
 );
@@ -133,7 +135,7 @@ export const fetchCSRFToken = createAsyncThunk(
       const data = await response.json();
       return data.csrfToken;
     } catch (error) {
-      return rejectWithValue(error instanceof Error ? error.message : '获取CSRF令牌失败');
+      return rejectWithValue(handleApiError(error));
     }
   }
 );
@@ -165,17 +167,17 @@ export const registerUser = createAsyncThunk(
 
       if (!registerResponse.ok) {
         const errorData = await registerResponse.json();
-        throw new Error(errorData.detail || errorData.message || '注册失败');
+        return rejectWithValue(handleApiError(errorData));
       }
 
       const userData = await registerResponse.json();
       
       return { 
-        user: userData.user_info,
+        user: userData.user,
         message: userData.message || '注册成功'
       };
     } catch (error) {
-      return rejectWithValue(error instanceof Error ? error.message : '注册失败');
+      return rejectWithValue(handleApiError(error));
     }
   }
 );

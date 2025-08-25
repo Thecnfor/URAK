@@ -43,12 +43,9 @@ export async function POST(request: NextRequest) {
         }
       });
     } else {
-      // 注册失败
+      // 注册失败 - 直接返回后端的错误数据结构
       return NextResponse.json(
-        { 
-          success: false, 
-          message: backendData.detail || backendData.message || '注册失败' 
-        },
+        backendData,
         { status: backendResponse.status }
       );
     }

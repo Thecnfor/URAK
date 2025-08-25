@@ -54,6 +54,12 @@ class UserRepository:
             if existing_email:
                 raise ValueError(f"邮箱 '{email}' 已存在")
             
+            # 验证密码强度
+            from app.core.security import security_validator
+            is_strong, password_errors = security_validator.validate_password_strength(password)
+            if not is_strong:
+                raise ValueError(f"密码不符合安全要求: {'; '.join(password_errors)}")
+            
             # 生成密码盐值
             salt = str(uuid.uuid4())[:32]
             
@@ -154,21 +160,19 @@ class UserRepository:
         async with self.db_manager.get_session() as session:
             user = await self._get_user_by_username(username, session)
             
+            if not user:
+                # 用户不存在时，不记录登录日志以避免数据库约束错误
+                return None
+            
             # 创建登录日志
             login_log = LoginLog(
                 id=str(uuid.uuid4()),
-                user_id=user.id if user else None,
+                user_id=user.id,
                 ip_address=ip_address,
                 user_agent=user_agent,
                 success=False,
                 created_at=datetime.utcnow()
             )
-            
-            if not user:
-                login_log.failure_reason = "用户不存在"
-                session.add(login_log)
-                await session.commit()
-                return None
             
             if not user.is_active or user.status != UserStatus.ACTIVE.value:
                 login_log.failure_reason = "用户已被禁用"

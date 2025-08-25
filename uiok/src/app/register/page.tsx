@@ -5,7 +5,8 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { registerUser, clearError } from '@/store/slices/authSlice';
-import { validateRegisterForm, validateField, type RegisterFormData } from '@/utils/validation';
+import { validateRegisterForm, validateField, getFieldValidationRules, type RegisterFormData } from '@/utils/validation';
+import { FIELD_NAMES, FieldErrors, TouchedFields } from '@/config/validation';
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -19,24 +20,14 @@ export default function RegisterPage() {
     confirmPassword: '',
   });
   
-  const [fieldErrors, setFieldErrors] = useState<{
-    username: string[];
-    email: string[];
-    password: string[];
-    confirmPassword: string[];
-  }>({
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({
     username: [],
     email: [],
     password: [],
     confirmPassword: [],
   });
   
-  const [touched, setTouched] = useState<{
-    username: boolean;
-    email: boolean;
-    password: boolean;
-    confirmPassword: boolean;
-  }>({
+  const [touched, setTouched] = useState<TouchedFields>({
     username: false,
     email: false,
     password: false,
@@ -80,35 +71,16 @@ export default function RegisterPage() {
   };
 
   const validateSingleField = (fieldName: string, value: string) => {
+    if (!['username', 'email', 'password', 'confirmPassword'].includes(fieldName)) return;
+    
+    const displayName = FIELD_NAMES[fieldName as keyof typeof FIELD_NAMES];
     let validation;
     
-    if (fieldName === 'username') {
-      validation = validateField(value, '用户名', {
-        required: true,
-        minLength: 3,
-        maxLength: 50,
-        pattern: /^[a-zA-Z0-9_]+$/,
-        patternMessage: '用户名只能包含字母、数字和下划线'
-      });
-    } else if (fieldName === 'email') {
-      validation = validateField(value, '邮箱', {
-        required: true,
-        maxLength: 100,
-        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-        patternMessage: '邮箱格式不正确'
-      });
-    } else if (fieldName === 'password') {
-      validation = validateField(value, '密码', {
-        required: true,
-        minLength: 4,
-        maxLength: 100
-      });
-    } else if (fieldName === 'confirmPassword') {
-      validation = validateField(value, '确认密码', {
-        required: true
-      });
+    if (fieldName === 'confirmPassword') {
+      const rules = getFieldValidationRules('confirmPassword');
+      validation = validateField(value, displayName, rules);
       
-      // 额外检查密码是否一致
+      // 检查密码是否匹配
       if (validation.isValid && value !== formData.password) {
         validation = {
           isValid: false,
@@ -116,7 +88,8 @@ export default function RegisterPage() {
         };
       }
     } else {
-      return;
+      const rules = getFieldValidationRules(fieldName as 'username' | 'email' | 'password');
+      validation = validateField(value, displayName, rules);
     }
     
     setFieldErrors(prev => ({
@@ -141,30 +114,15 @@ export default function RegisterPage() {
     
     if (!validation.isValid) {
       // 设置字段错误
-      const usernameValidation = validateField(formData.username, '用户名', {
-        required: true,
-        minLength: 3,
-        maxLength: 50,
-        pattern: /^[a-zA-Z0-9_]+$/,
-        patternMessage: '用户名只能包含字母、数字和下划线'
-      });
+      const usernameRules = getFieldValidationRules('username');
+      const emailRules = getFieldValidationRules('email');
+      const passwordRules = getFieldValidationRules('password');
+      const confirmPasswordRules = getFieldValidationRules('confirmPassword');
       
-      const emailValidation = validateField(formData.email, '邮箱', {
-        required: true,
-        maxLength: 100,
-        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-        patternMessage: '邮箱格式不正确'
-      });
-      
-      const passwordValidation = validateField(formData.password, '密码', {
-        required: true,
-        minLength: 6,
-        maxLength: 100
-      });
-      
-      let confirmPasswordValidation = validateField(formData.confirmPassword, '确认密码', {
-        required: true
-      });
+      const usernameValidation = validateField(formData.username, FIELD_NAMES.username, usernameRules);
+      const emailValidation = validateField(formData.email, FIELD_NAMES.email, emailRules);
+      const passwordValidation = validateField(formData.password, FIELD_NAMES.password, passwordRules);
+      let confirmPasswordValidation = validateField(formData.confirmPassword, FIELD_NAMES.confirmPassword, confirmPasswordRules);
       
       if (confirmPasswordValidation.isValid && formData.confirmPassword !== formData.password) {
         confirmPasswordValidation = {
