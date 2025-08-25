@@ -1,0 +1,68 @@
+{
+  "jwt": {
+    "secret_key": "your-super-secret-jwt-key-change-in-production-2024",
+    "algorithm": "HS256",
+    "access_token_expire_minutes": 30,
+    "refresh_token_expire_hours": 48,
+    "issuer": "URAK-AUTH-SERVICE",
+    "audience": "URAK-USERS"
+  },
+  "encryption": {
+    "password_hash_algorithm": "bcrypt",
+    "bcrypt_rounds": 12,
+    "pbkdf2_iterations": 100000,
+    "salt_length": 32,
+    "aes_key": "your-aes-256-encryption-key-change-in-production",
+    "cipher_mode": "AES-256-GCM"
+  },
+  "security_policies": {
+    "max_login_attempts": 5,
+    "lockout_duration_minutes": 30,
+    "session_timeout_hours": 48,
+    "password_min_length": 8,
+    "password_require_uppercase": true,
+    "password_require_lowercase": true,
+    "password_require_numbers": true,
+    "password_require_special_chars": true,
+    "max_concurrent_sessions": 3,
+    "csrf_token_expire_minutes": 60,
+    "rate_limit_requests_per_minute": 60,
+    "rate_limit_login_attempts_per_minute": 5
+  },
+  "audit_log": {
+    "enabled": true,
+    "log_level": "INFO",
+    "log_file_path": "../logs/security_audit.log",
+    "max_log_file_size_mb": 100,
+    "log_retention_days": 90,
+    "events_to_log": [
+      "login_success",
+      "login_failure",
+      "logout",
+      "password_change",
+      "account_locked",
+      "token_refresh",
+      "permission_denied",
+      "suspicious_activity"
+    ]
+  },
+  "cors": {
+    "allowed_origins": ["http://localhost:3000", "http://127.0.0.1:3000"],
+    "allowed_methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    "allowed_headers": ["Content-Type", "Authorization", "X-CSRF-Token"],
+    "allow_credentials": true,
+    "max_age": 3600
+  },
+  "owasp_compliance": {
+    "injection_prevention": true,
+    "broken_authentication_prevention": true,
+    "sensitive_data_exposure_prevention": true,
+    "xml_external_entities_prevention": true,
+    "broken_access_control_prevention": true,
+    "security_misconfiguration_prevention": true,
+    "cross_site_scripting_prevention": true,
+    "insecure_deserialization_prevention": true,
+    "vulnerable_components_monitoring": true,
+    "insufficient_logging_monitoring_prevention": true
+  }
+}

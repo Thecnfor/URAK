@@ -7,9 +7,10 @@ from fastapi.responses import JSONResponse
 
 from app.services.blog import BlogService
 from app.models.blog import BlogDataResponse, ArticleResponse, CategoryResponse
+from app.core.database import db_manager
 
 router = APIRouter()
-blog_service = BlogService()
+blog_service = BlogService(db_manager)
 
 
 @router.get("/blog-data", response_model=BlogDataResponse)

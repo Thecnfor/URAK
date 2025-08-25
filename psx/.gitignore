@@ -1,5 +1,5 @@
 .trae
-app/__pycache__/
+app/__pycache__
 *.pyc
 *.pyo
 *.pyd
@@ -19,3 +19,5 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+docs/
+.venv

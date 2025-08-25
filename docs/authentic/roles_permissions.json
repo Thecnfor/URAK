@@ -1,0 +1,241 @@
+{
+  "roles": {
+    "admin": {
+      "name": "Administrator",
+      "description": "Full system access with all administrative privileges",
+      "level": 100,
+      "permissions": [
+        "user:create",
+        "user:read",
+        "user:update",
+        "user:delete",
+        "user:list",
+        "role:manage",
+        "system:configure",
+        "audit:view",
+        "security:manage",
+        "blog:create",
+        "blog:read",
+        "blog:update",
+        "blog:delete",
+        "blog:publish",
+        "blog:moderate"
+      ],
+      "restrictions": {
+        "ip_whitelist": [],
+        "time_restrictions": [],
+        "session_limit": 3
+      }
+    },
+    "editor": {
+      "name": "Editor",
+      "description": "Content management and editing privileges",
+      "level": 50,
+      "permissions": [
+        "blog:create",
+        "blog:read",
+        "blog:update",
+        "blog:delete",
+        "blog:publish",
+        "user:read_own",
+        "user:update_own"
+      ],
+      "restrictions": {
+        "ip_whitelist": [],
+        "time_restrictions": [],
+        "session_limit": 2
+      }
+    },
+    "user": {
+      "name": "Regular User",
+      "description": "Basic user access with limited privileges",
+      "level": 10,
+      "permissions": [
+        "blog:read",
+        "user:read_own",
+        "user:update_own",
+        "profile:update"
+      ],
+      "restrictions": {
+        "ip_whitelist": [],
+        "time_restrictions": [],
+        "session_limit": 2
+      }
+    },
+    "guest": {
+      "name": "Guest",
+      "description": "Read-only access for unauthenticated users",
+      "level": 0,
+      "permissions": [
+        "blog:read_public"
+      ],
+      "restrictions": {
+        "ip_whitelist": [],
+        "time_restrictions": [],
+        "session_limit": 1
+      }
+    }
+  },
+  "permissions": {
+    "user:create": {
+      "description": "Create new user accounts",
+      "resource": "user",
+      "action": "create",
+      "scope": "global"
+    },
+    "user:read": {
+      "description": "Read any user information",
+      "resource": "user",
+      "action": "read",
+      "scope": "global"
+    },
+    "user:read_own": {
+      "description": "Read own user information",
+      "resource": "user",
+      "action": "read",
+      "scope": "own"
+    },
+    "user:update": {
+      "description": "Update any user information",
+      "resource": "user",
+      "action": "update",
+      "scope": "global"
+    },
+    "user:update_own": {
+      "description": "Update own user information",
+      "resource": "user",
+      "action": "update",
+      "scope": "own"
+    },
+    "user:delete": {
+      "description": "Delete user accounts",
+      "resource": "user",
+      "action": "delete",
+      "scope": "global"
+    },
+    "user:list": {
+      "description": "List all users",
+      "resource": "user",
+      "action": "list",
+      "scope": "global"
+    },
+    "blog:create": {
+      "description": "Create new blog posts",
+      "resource": "blog",
+      "action": "create",
+      "scope": "global"
+    },
+    "blog:read": {
+      "description": "Read all blog posts",
+      "resource": "blog",
+      "action": "read",
+      "scope": "global"
+    },
+    "blog:read_public": {
+      "description": "Read public blog posts only",
+      "resource": "blog",
+      "action": "read",
+      "scope": "public"
+    },
+    "blog:update": {
+      "description": "Update blog posts",
+      "resource": "blog",
+      "action": "update",
+      "scope": "global"
+    },
+    "blog:delete": {
+      "description": "Delete blog posts",
+      "resource": "blog",
+      "action": "delete",
+      "scope": "global"
+    },
+    "blog:publish": {
+      "description": "Publish/unpublish blog posts",
+      "resource": "blog",
+      "action": "publish",
+      "scope": "global"
+    },
+    "blog:moderate": {
+      "description": "Moderate blog content and comments",
+      "resource": "blog",
+      "action": "moderate",
+      "scope": "global"
+    },
+    "role:manage": {
+      "description": "Manage user roles and permissions",
+      "resource": "role",
+      "action": "manage",
+      "scope": "global"
+    },
+    "system:configure": {
+      "description": "Configure system settings",
+      "resource": "system",
+      "action": "configure",
+      "scope": "global"
+    },
+    "audit:view": {
+      "description": "View audit logs and security reports",
+      "resource": "audit",
+      "action": "view",
+      "scope": "global"
+    },
+    "security:manage": {
+      "description": "Manage security settings and policies",
+      "resource": "security",
+      "action": "manage",
+      "scope": "global"
+    },
+    "profile:update": {
+      "description": "Update user profile information",
+      "resource": "profile",
+      "action": "update",
+      "scope": "own"
+    }
+  },
+  "access_control_matrix": {
+    "endpoints": {
+      "/api/v1/auth/login": {
+        "methods": ["POST"],
+        "required_permissions": [],
+        "rate_limit": "5/minute",
+        "public": true
+      },
+      "/api/v1/auth/logout": {
+        "methods": ["POST"],
+        "required_permissions": [],
+        "rate_limit": "10/minute",
+        "public": false
+      },
+      "/api/v1/auth/refresh": {
+        "methods": ["POST"],
+        "required_permissions": [],
+        "rate_limit": "10/minute",
+        "public": false
+      },
+      "/api/v1/users": {
+        "methods": ["GET"],
+        "required_permissions": ["user:list"],
+        "rate_limit": "30/minute",
+        "public": false
+      },
+      "/api/v1/users/{user_id}": {
+        "methods": ["GET", "PUT", "DELETE"],
+        "required_permissions": ["user:read", "user:update", "user:delete"],
+        "rate_limit": "30/minute",
+        "public": false
+      },
+      "/api/v1/blog": {
+        "methods": ["GET", "POST"],
+        "required_permissions": ["blog:read", "blog:create"],
+        "rate_limit": "60/minute",
+        "public": true
+      },
+      "/api/v1/blog/{blog_id}": {
+        "methods": ["GET", "PUT", "DELETE"],
+        "required_permissions": ["blog:read", "blog:update", "blog:delete"],
+        "rate_limit": "60/minute",
+        "public": true
+      }
+    }
+  }
+}
