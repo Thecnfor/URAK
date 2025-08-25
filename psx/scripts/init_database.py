@@ -134,12 +134,12 @@ class DatabaseInitializer:
             admin_count = result.scalar()
             
             if admin_count == 0:
-                # 创建默认管理员
+                # 创建xrak管理员账户
                 admin_user = User(
                     id=str(uuid.uuid4()),
-                    username="admin",
-                    email="admin@example.com",
-                    password_hash=pwd_context.hash("admin123"),
+                    username="xrak",
+                    email="xrak@example.com",
+                    password_hash=pwd_context.hash("kali"),
                     role="admin",
                     status="active",
                     is_active=True,

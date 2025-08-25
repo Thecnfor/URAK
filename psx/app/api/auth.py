@@ -16,8 +16,8 @@ from app.services.auth import (
     RefreshTokenResponse,
     TokenValidationResult
 )
-from app.services.audit import audit_logger
-from app.models.user import User, UserRole
+from app.services.audit import audit_logger, AuditEventType, AuditSeverity
+from app.models.user import User, UserRole, user_repository
 from app.core.security import csrf_manager, security_validator
 
 # Security scheme
@@ -77,6 +77,19 @@ class CSRFTokenResponseModel(BaseModel):
     csrf_token: str
     expires_in: int
 
+class RegisterRequestModel(BaseModel):
+    """User registration request model."""
+    username: str = Field(..., min_length=3, max_length=50)
+    email: EmailStr
+    password: str = Field(..., min_length=8, max_length=128)
+    csrf_token: Optional[str] = None
+
+class RegisterResponseModel(BaseModel):
+    """User registration response model."""
+    success: bool
+    user_info: Optional[Dict[str, Any]] = None
+    message: Optional[str] = None
+
 # Helper functions
 def get_client_info(request: Request) -> tuple[str, str]:
     """Extract client IP and User-Agent from request."""
@@ -106,15 +119,15 @@ async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(s
         )
     
     # Validate token
-    validation_result = auth_service.validate_token(credentials.credentials)
+    validation_result = await auth_service.validate_token(credentials.credentials)
     
     if not validation_result.valid:
         # Log failed authentication attempt
         if request:
             ip_address, user_agent = get_client_info(request)
             audit_logger.log_event(
-                event_type=audit_logger.AuditEventType.ACCESS_DENIED,
-                severity=audit_logger.AuditSeverity.MEDIUM,
+                event_type=AuditEventType.ACCESS_DENIED,
+                severity=AuditSeverity.MEDIUM,
                 action="token_validation",
                 result="failed",
                 ip_address=ip_address,
@@ -138,7 +151,7 @@ async def get_current_user_with_csrf(credentials: HTTPAuthorizationCredentials =
     csrf_token = request.headers.get("X-CSRF-Token") if request else None
     
     # Validate CSRF token
-    validation_result = auth_service.validate_token(
+    validation_result = await auth_service.validate_token(
         credentials.credentials, 
         require_csrf=True, 
         csrf_token=csrf_token
@@ -174,7 +187,7 @@ async def login(request: Request, login_data: LoginRequestModel):
     )
     
     # Attempt login
-    login_response = auth_service.login(login_request)
+    login_response = await auth_service.login(login_request)
     
     if login_response.success:
         # Log successful login
@@ -229,7 +242,7 @@ async def refresh_token(request: Request, refresh_data: RefreshRequestModel):
         # Log token refresh
         audit_logger.log_event(
             event_type=audit_logger.AuditEventType.TOKEN_REFRESH,
-            severity=audit_logger.AuditSeverity.LOW,
+            severity=AuditSeverity.LOW,
             action="token_refresh",
             result="success",
             ip_address=ip_address,
@@ -260,7 +273,7 @@ async def logout(request: Request, current_user: User = Depends(get_current_user
         token = auth_header[7:]
         
         # Logout user
-        success = auth_service.logout(token)
+        success = await auth_service.logout(token)
         
         if success:
             # Log logout
@@ -327,13 +340,96 @@ async def get_current_user_info(current_user: User = Depends(get_current_user)):
 
 @router.get("/csrf-token", response_model=CSRFTokenResponseModel)
 async def get_csrf_token():
-    """Get CSRF token for forms."""
+    """Get CSRF token for form submissions."""
     csrf_token = csrf_manager.generate_csrf_token()
     
     return CSRFTokenResponseModel(
         csrf_token=csrf_token,
         expires_in=3600  # 1 hour
     )
+
+@router.post("/register", response_model=RegisterResponseModel)
+async def register(request: Request, register_data: RegisterRequestModel):
+    """User registration endpoint."""
+    ip_address, user_agent = get_client_info(request)
+    
+    try:
+        # Create new user
+        user = await user_repository.create_user(
+            username=register_data.username,
+            email=register_data.email,
+            password=register_data.password,
+            role=UserRole.USER
+        )
+        
+        # Log successful registration
+        audit_logger.log_event(
+            event_type=AuditEventType.USER_CREATED,
+            severity=AuditSeverity.LOW,
+            action="user_registration",
+            result="success",
+            ip_address=ip_address,
+            user_agent=user_agent,
+            user_id=user.id,
+            username=user.username,
+            details={"email": user.email, "role": user.role}
+        )
+        
+        return RegisterResponseModel(
+            success=True,
+            user_info={
+                "id": user.id,
+                "username": user.username,
+                "email": user.email,
+                "role": user.role,
+                "status": user.status
+            },
+            message="User registered successfully"
+        )
+        
+    except ValueError as e:
+        # Log failed registration
+        audit_logger.log_event(
+            event_type=AuditEventType.ACCESS_DENIED,
+            severity=AuditSeverity.MEDIUM,
+            action="user_registration",
+            result="failed",
+            ip_address=ip_address,
+            user_agent=user_agent,
+            details={"error": str(e), "username": register_data.username, "email": register_data.email}
+        )
+        
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(e)
+        )
+    except Exception as e:
+        # Log unexpected error
+        import traceback
+        error_details = {
+            "error": str(e),
+            "username": register_data.username,
+            "traceback": traceback.format_exc()
+        }
+        
+        # Print error to console for debugging
+        print(f"Registration error: {str(e)}")
+        print(f"Traceback: {traceback.format_exc()}")
+        
+        audit_logger.log_event(
+            event_type=AuditEventType.ERROR_OCCURRED,
+            severity=AuditSeverity.HIGH,
+            action="user_registration",
+            result="error",
+            ip_address=ip_address,
+            user_agent=user_agent,
+            details=error_details
+        )
+        
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Registration failed due to server error"
+        )
 
 @router.post("/change-password")
 async def change_password(
@@ -386,7 +482,7 @@ async def validate_token(current_user: User = Depends(get_current_user)):
         "valid": True,
         "user_id": current_user.id,
         "username": current_user.username,
-        "role": current_user.role.value
+        "role": current_user.role
     }
 
 # Admin-only endpoints
@@ -427,7 +523,7 @@ async def get_audit_events(
         events = audit_logger.get_events_by_user(user_id, limit)
     elif event_type:
         try:
-            event_type_enum = audit_logger.AuditEventType(event_type)
+            event_type_enum = AuditEventType(event_type)
             events = audit_logger.get_events_by_type(event_type_enum, limit)
         except ValueError:
             raise HTTPException(

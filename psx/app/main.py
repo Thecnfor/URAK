@@ -105,6 +105,7 @@ async def cleanup_expired_tokens():
 async def lifespan(app: FastAPI):
     """应用生命周期管理"""
     from app.services.audit import AuditEventType, AuditSeverity
+    from app.core.database import init_database, close_database
     
     # 启动时执行
     print("🚀 URAK Blog API 服务启动中...")
@@ -113,6 +114,10 @@ async def lifespan(app: FastAPI):
     
     # Initialize security components
     try:
+        # Initialize database first
+        await init_database()
+        print(f"💾 数据库已初始化")
+        
         # Security configuration is already loaded in SecurityConfig.__init__
         print(f"🔐 安全配置已加载")
         
@@ -172,6 +177,10 @@ async def lifespan(app: FastAPI):
         user_agent="system",
         details={"timestamp": datetime.now(timezone.utc).isoformat()}
     )
+    
+    # Close database
+    await close_database()
+    print("💾 数据库连接已关闭")
     
     thread_pool.shutdown()
     print("✅ 资源清理完成，服务已退出")

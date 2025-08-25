@@ -18,6 +18,7 @@ class AuditEventType(str, Enum):
     PASSWORD_CHANGE = "password_change"
     ACCOUNT_LOCKED = "account_locked"
     ACCOUNT_UNLOCKED = "account_unlocked"
+    USER_CREATED = "user_created"
     
     # Authorization events
     ACCESS_GRANTED = "access_granted"

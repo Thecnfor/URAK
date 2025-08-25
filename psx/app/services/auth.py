@@ -67,11 +67,11 @@ class AuthenticationService:
         self.user_repo = user_repo or user_repository
         self._active_tokens: Dict[str, Dict[str, Any]] = {}  # In-memory token blacklist
     
-    def login(self, request: LoginRequest) -> LoginResponse:
+    async def login(self, request: LoginRequest) -> LoginResponse:
         """Authenticate user and create session."""
         try:
             # Authenticate user
-            user, error_message = self.user_repo.authenticate_user(
+            user = await self.user_repo.authenticate_user(
                 request.username,
                 request.password,
                 request.ip_address,
@@ -81,18 +81,22 @@ class AuthenticationService:
             if not user:
                 return LoginResponse(
                     success=False,
-                    error_message=error_message or "Authentication failed"
+                    error_message="Authentication failed"
                 )
             
             # Create session
-            session = user.active_sessions[-1]  # Get the latest session
+            session = await self.user_repo.create_session(
+                user,
+                request.ip_address,
+                request.user_agent
+            )
             
             # Generate tokens
             token_data = {
                 "sub": user.id,
                 "username": user.username,
                 "email": user.email,
-                "role": user.role.value,
+                "role": user.role,
                 "permissions": user.permissions,
                 "session_id": session.session_id
             }
@@ -105,7 +109,7 @@ class AuthenticationService:
             session.csrf_token = csrf_token
             
             # Update user with session info
-            self.user_repo.update_user(user)
+            await self.user_repo.update_user(user)
             
             # Store token info for tracking
             self._active_tokens[access_token] = {
@@ -121,10 +125,10 @@ class AuthenticationService:
                 "id": user.id,
                 "username": user.username,
                 "email": user.email,
-                "role": user.role.value,
+                "role": user.role,
                 "permissions": user.permissions,
                 "last_login": user.last_login,
-                "status": user.status.value
+                "status": user.status
             }
             
             return LoginResponse(
@@ -143,7 +147,7 @@ class AuthenticationService:
                 error_message=f"Login failed: {str(e)}"
             )
     
-    def validate_token(self, token: str, require_csrf: bool = False, csrf_token: str = None) -> TokenValidationResult:
+    async def validate_token(self, token: str, require_csrf: bool = False, csrf_token: str = None) -> TokenValidationResult:
         """Validate access token and return user information."""
         try:
             # Check if token is blacklisted
@@ -162,7 +166,7 @@ class AuthenticationService:
                 )
             
             # Get user
-            user = self.user_repo.get_user_by_id(payload["sub"])
+            user = await self.user_repo.get_user_by_id(payload["sub"])
             if not user:
                 return TokenValidationResult(
                     valid=False,
@@ -180,7 +184,7 @@ class AuthenticationService:
             # Validate session
             session_id = payload.get("session_id")
             if session_id:
-                session = user.get_session(session_id)
+                session = await self.user_repo.get_session(session_id)
                 if not session or not session.is_active:
                     return TokenValidationResult(
                         valid=False,
@@ -188,8 +192,8 @@ class AuthenticationService:
                     )
                 
                 # Update session activity
-                session.last_activity = datetime.now(timezone.utc).isoformat()
-                self.user_repo.update_user(user)
+                session.last_activity = datetime.now(timezone.utc)
+                await self.user_repo.update_session(session)
                 
                 # Validate CSRF token if required
                 if require_csrf:
@@ -298,11 +302,11 @@ class AuthenticationService:
                 error_message=f"Token refresh failed: {str(e)}"
             )
     
-    def logout(self, token: str, session_id: Optional[str] = None) -> bool:
+    async def logout(self, token: str, session_id: Optional[str] = None) -> bool:
         """Logout user and invalidate session."""
         try:
             # Validate token to get user info
-            validation_result = self.validate_token(token)
+            validation_result = await self.validate_token(token)
             if not validation_result.valid:
                 return False
             
@@ -436,3 +440,63 @@ class AuthenticationService:
 
 # Global authentication service instance
 auth_service = AuthenticationService()
+
+
+# FastAPI Dependencies
+from fastapi import Depends, HTTPException, status
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from typing import Optional
+
+security = HTTPBearer()
+
+
+async def get_current_user(
+    credentials: HTTPAuthorizationCredentials = Depends(security)
+) -> User:
+    """Get current authenticated user from JWT token."""
+    token = credentials.credentials
+    
+    # Validate token
+    validation_result = await auth_service.validate_token(token)
+    
+    if not validation_result.valid:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail=validation_result.error_message or "Invalid authentication credentials",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    
+    if not validation_result.user:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="User not found",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    
+    return validation_result.user
+
+
+async def require_admin(
+    current_user: User = Depends(get_current_user)
+) -> User:
+    """Require admin role for the current user."""
+    if current_user.role.value != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Admin access required"
+        )
+    
+    return current_user
+
+
+async def get_current_user_optional(
+    credentials: Optional[HTTPAuthorizationCredentials] = Depends(HTTPBearer(auto_error=False))
+) -> Optional[User]:
+    """Get current user if authenticated, otherwise return None."""
+    if not credentials:
+        return None
+    
+    try:
+        return await get_current_user(credentials)
+    except HTTPException:
+        return None

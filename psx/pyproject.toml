@@ -7,7 +7,7 @@ requires-python = ">=3.8.1"
 dependencies = [
     "fastapi>=0.104.0",
     "uvicorn[standard]>=0.24.0",
-    "pydantic>=2.5.0",
+    "pydantic[email]>=2.5.0",
     "pydantic-settings>=2.1.0",
     "python-multipart>=0.0.6",
     "pyyaml>=6.0.1",
@@ -50,3 +50,13 @@ dev = [
 
 [project.scripts]
 start = "main:main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.uv]
+package = true

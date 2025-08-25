@@ -10,9 +10,16 @@ export default function AdminPage() {
   const dispatch = useAppDispatch();
   const router = useRouter();
 
-  const handleLogout = () => {
-    dispatch(logoutUser());
-    router.push('/login');
+  const handleLogout = async () => {
+    try {
+      await dispatch(logoutUser()).unwrap();
+    } catch (error) {
+      // 即使登出失败也要跳转到登录页
+      console.error('登出失败:', error);
+    } finally {
+      // 确保无论登出成功与否都跳转到登录页
+      router.push('/login');
+    }
   };
 
   // 初始化认证状态

@@ -259,7 +259,8 @@ class DatabaseBackup:
                             if value is None:
                                 values.append('NULL')
                             elif isinstance(value, str):
-                                values.append(f"'{value.replace(\"'\", \"\\'\")}'")
+                                escaped_value = value.replace("'", "''")
+                                values.append(f"'{escaped_value}'")
                             elif isinstance(value, datetime):
                                 values.append(f"'{value.isoformat()}'")
                             else:
@@ -306,7 +307,8 @@ class DatabaseBackup:
                 if value is None:
                     values.append('NULL')
                 elif isinstance(value, str):
-                    values.append(f"'{value.replace(\"'\", \"\\'\")}'")
+                    escaped_value = value.replace("'", "''")
+                    values.append(f"'{escaped_value}'")
                 elif isinstance(value, datetime):
                     values.append(f"'{value.isoformat()}'")
                 else:

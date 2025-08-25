@@ -26,8 +26,15 @@ const PUBLIC_ROUTES = [
 // 验证JWT令牌
 async function verifyToken(token: string): Promise<boolean> {
   try {
-    await jwtVerify(token, JWT_SECRET);
-    return true;
+    // 调用后端验证API而不是在前端验证JWT
+    const response = await fetch(`${process.env.BACKEND_URL || 'http://localhost:8000'}/api/auth/validate`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    return response.ok;
   } catch {
     return false;
   }

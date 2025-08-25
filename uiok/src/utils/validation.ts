@@ -10,6 +10,13 @@ export interface LoginFormData {
   password: string;
 }
 
+export interface RegisterFormData {
+  username: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
 // 验证用户名
 export const validateUsername = (username: string): ValidationResult => {
   const errors: string[] = [];
@@ -36,10 +43,44 @@ export const validatePassword = (password: string): ValidationResult => {
   
   if (!password) {
     errors.push('密码不能为空');
-  } else if (password.length < 6) {
-    errors.push('密码至少需要6个字符');
-  } else if (password.length > 100) {
-    errors.push('密码不能超过100个字符');
+  } else if (password.length < 8) {
+    errors.push('密码至少需要8个字符');
+  } else if (password.length > 128) {
+    errors.push('密码不能超过128个字符');
+  }
+  
+  return {
+    isValid: errors.length === 0,
+    errors
+  };
+};
+
+// 验证邮箱
+export const validateEmail = (email: string): ValidationResult => {
+  const errors: string[] = [];
+  
+  if (!email) {
+    errors.push('邮箱不能为空');
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errors.push('邮箱格式不正确');
+  } else if (email.length > 100) {
+    errors.push('邮箱不能超过100个字符');
+  }
+  
+  return {
+    isValid: errors.length === 0,
+    errors
+  };
+};
+
+// 验证确认密码
+export const validateConfirmPassword = (password: string, confirmPassword: string): ValidationResult => {
+  const errors: string[] = [];
+  
+  if (!confirmPassword) {
+    errors.push('确认密码不能为空');
+  } else if (password !== confirmPassword) {
+    errors.push('两次输入的密码不一致');
   }
   
   return {
@@ -56,6 +97,26 @@ export const validateLoginForm = (formData: LoginFormData): ValidationResult => 
   const allErrors = [
     ...usernameValidation.errors,
     ...passwordValidation.errors
+  ];
+  
+  return {
+    isValid: allErrors.length === 0,
+    errors: allErrors
+  };
+};
+
+// 验证整个注册表单
+export const validateRegisterForm = (formData: RegisterFormData): ValidationResult => {
+  const usernameValidation = validateUsername(formData.username);
+  const emailValidation = validateEmail(formData.email);
+  const passwordValidation = validatePassword(formData.password);
+  const confirmPasswordValidation = validateConfirmPassword(formData.password, formData.confirmPassword);
+  
+  const allErrors = [
+    ...usernameValidation.errors,
+    ...emailValidation.errors,
+    ...passwordValidation.errors,
+    ...confirmPasswordValidation.errors
   ];
   
   return {

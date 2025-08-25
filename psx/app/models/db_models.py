@@ -126,6 +126,31 @@ class User(Base, TimestampMixin):
         comment="会话数据"
     )
     
+    def can_login(self) -> tuple[bool, str]:
+        """检查用户是否可以登录"""
+        from datetime import datetime, timezone
+        
+        # 检查用户是否激活
+        if not self.is_active:
+            return False, "用户账户已被禁用"
+        
+        # 检查用户状态
+        if self.status != "active":
+            if self.status == "suspended":
+                return False, "用户账户已被暂停"
+            elif self.status == "pending":
+                return False, "用户账户待激活"
+            elif self.status == "inactive":
+                return False, "用户账户未激活"
+            else:
+                return False, "用户账户状态异常"
+        
+        # 检查账户是否被锁定
+        if self.locked_until and self.locked_until > datetime.now(timezone.utc):
+            return False, "用户账户已被锁定"
+        
+        return True, "可以登录"
+    
     # 关系
     articles: Mapped[List["Article"]] = relationship(
         "Article",
@@ -146,7 +171,7 @@ class User(Base, TimestampMixin):
     # 约束
     __table_args__ = (
         CheckConstraint("role IN ('admin', 'editor', 'user', 'guest')", name="check_user_role"),
-        CheckConstraint("status IN ('active', 'inactive', 'locked', 'suspended')", name="check_user_status"),
+        CheckConstraint("status IN ('active', 'inactive', 'suspended', 'pending')", name="check_user_status"),
         Index("idx_user_status_active", "status", "is_active"),
         Index("idx_user_last_login", "last_login"),
         {"comment": "用户表"}

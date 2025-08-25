@@ -1149,11 +1149,3888 @@
       },
       "session_id": null,
       "request_id": null
+    },
+    {
+      "id": "21bf83b9-1ffc-4aab-8ba8-2a3681ab0697",
+      "timestamp": "2025-08-25T06:17:41.761317+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T06:17:41.761289+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "72f6c7c6-a1c5-4ce1-b48f-68a5b4048d05",
+      "timestamp": "2025-08-25T06:30:23.177772+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T06:30:23.177730+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "483faf99-1aad-46a2-918d-8c10b4ed0066",
+      "timestamp": "2025-08-25T06:44:37.344255+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T06:44:37.344227+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "c467f5a0-5693-4e47-8a9f-42d5840620f3",
+      "timestamp": "2025-08-25T06:49:35.043723+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T06:49:35.043584+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "5fb5c0ef-cf24-4685-a0df-8b880f791709",
+      "timestamp": "2025-08-25T08:55:07.779758+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T08:55:07.779731+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "7ae7adf1-c8ec-4c97-90ba-dc52ca638947",
+      "timestamp": "2025-08-25T08:55:30.607654+00:00",
+      "event_type": "error_occurred",
+      "severity": "critical",
+      "user_id": null,
+      "username": null,
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36",
+      "resource": null,
+      "action": "unhandled_exception",
+      "result": "failed",
+      "details": {
+        "exception_type": "AttributeError",
+        "exception_message": "'CSRFManager' object has no attribute 'generate_token'",
+        "path": "/api/auth/csrf-token",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "9cfde096-b7af-45bc-a9ea-56e7b98db7a9",
+      "timestamp": "2025-08-25T08:55:30.636562+00:00",
+      "event_type": "error_occurred",
+      "severity": "critical",
+      "user_id": null,
+      "username": null,
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36",
+      "resource": null,
+      "action": "unhandled_exception",
+      "result": "failed",
+      "details": {
+        "exception_type": "AttributeError",
+        "exception_message": "'CSRFManager' object has no attribute 'generate_token'",
+        "path": "/api/auth/csrf-token",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b2481339-a8c4-4a0b-a169-e8fde375f164",
+      "timestamp": "2025-08-25T08:56:21.586309+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T08:56:21.586279+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "98ed2bd0-a55d-49f4-9f64-6253539ef468",
+      "timestamp": "2025-08-25T08:56:22.770410+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T08:56:22.770380+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "bc0871e8-a45f-466b-bc62-7e1ef1571560",
+      "timestamp": "2025-08-25T08:57:30.456411+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T08:57:30.456385+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "28317329-8e49-487d-9a66-2be2094d7084",
+      "timestamp": "2025-08-25T08:58:05.581541+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T08:58:05.581503+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "5519b0b6-fad0-4cc7-bc8c-51363b55adad",
+      "timestamp": "2025-08-25T08:58:06.880147+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T08:58:06.880120+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "741902c3-ece9-460a-bdc4-07b32dd0fefd",
+      "timestamp": "2025-08-25T08:58:07.890010+00:00",
+      "event_type": "error_occurred",
+      "severity": "critical",
+      "user_id": null,
+      "username": null,
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36",
+      "resource": null,
+      "action": "unhandled_exception",
+      "result": "failed",
+      "details": {
+        "exception_type": "AttributeError",
+        "exception_message": "'CSRFManager' object has no attribute 'generate_token'",
+        "path": "/api/auth/csrf-token",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "19a85baa-b58c-42e2-bb4d-8475cc8f8825",
+      "timestamp": "2025-08-25T08:58:07.904149+00:00",
+      "event_type": "error_occurred",
+      "severity": "critical",
+      "user_id": null,
+      "username": null,
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36",
+      "resource": null,
+      "action": "unhandled_exception",
+      "result": "failed",
+      "details": {
+        "exception_type": "AttributeError",
+        "exception_message": "'CSRFManager' object has no attribute 'generate_token'",
+        "path": "/api/auth/csrf-token",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b49e5ac7-da21-46fc-8069-4dcd095526db",
+      "timestamp": "2025-08-25T08:59:18.109588+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T08:59:18.109558+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "8e629387-3468-484f-9b63-ea664c5650a1",
+      "timestamp": "2025-08-25T08:59:19.625948+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T08:59:19.625923+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "675af879-2716-497f-8b83-5a496b3708c7",
+      "timestamp": "2025-08-25T09:03:09.088376+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:03:09.088349+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "479899f7-9572-4e07-81c3-281bbe3cb184",
+      "timestamp": "2025-08-25T09:03:35.597979+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:03:35.597934+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "634551e5-d67e-4b06-8ec0-e6a8257b7fcc",
+      "timestamp": "2025-08-25T09:03:37.162772+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:03:37.162744+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "518c559e-1e7b-4c53-83cf-9d41b83353dc",
+      "timestamp": "2025-08-25T09:12:44.523140+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "admin",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: cannot unpack non-iterable coroutine object",
+        "timestamp": "2025-08-25T09:12:44.523109+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "2e2db1a6-729a-452a-b832-17a63888c9fe",
+      "timestamp": "2025-08-25T09:12:44.524991+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: cannot unpack non-iterable coroutine object",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "9b7f4e19-ad97-435b-abc2-983b8895e57f",
+      "timestamp": "2025-08-25T09:13:09.860932+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "admin",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: cannot unpack non-iterable coroutine object",
+        "timestamp": "2025-08-25T09:13:09.860909+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "9aa0a34d-68e4-415f-8f79-f7e40886f846",
+      "timestamp": "2025-08-25T09:13:09.862837+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: cannot unpack non-iterable coroutine object",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "7b24e516-715c-4061-92ce-22644793878c",
+      "timestamp": "2025-08-25T09:15:27.943056+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:15:27.943027+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "72813423-9960-43e5-81f9-44e36de69658",
+      "timestamp": "2025-08-25T09:15:29.070685+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:15:29.070657+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "06ecdfb8-657c-43cd-8527-a3a540be4e26",
+      "timestamp": "2025-08-25T09:19:31.094591+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:19:31.094562+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "9dc93441-141b-47d8-acca-7b79bef23d10",
+      "timestamp": "2025-08-25T09:21:36.766310+00:00",
+      "event_type": "error_occurred",
+      "severity": "critical",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "unhandled_exception",
+      "result": "failed",
+      "details": {
+        "exception_type": "AttributeError",
+        "exception_message": "'AuditLogger' object has no attribute 'AuditEventType'",
+        "path": "/api/auth/register",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "70310188-95a3-48d5-b2be-fa7596486825",
+      "timestamp": "2025-08-25T09:22:21.824924+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:22:21.824894+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "01ef6cce-1588-435c-be85-e83bc5b92502",
+      "timestamp": "2025-08-25T09:22:23.398369+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:22:23.398338+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "273f25b5-33d1-487a-9468-a56cd8a21d29",
+      "timestamp": "2025-08-25T09:22:35.876157+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:22:35.876114+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "fe102664-f4c6-467b-8c01-6c9bdebc8443",
+      "timestamp": "2025-08-25T09:22:37.441127+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:22:37.441098+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "24df41d1-452f-4aed-a5aa-417db399dccc",
+      "timestamp": "2025-08-25T09:22:48.207916+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:22:48.207875+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "cb3b1704-e717-49ec-b03b-6c2489e6b08f",
+      "timestamp": "2025-08-25T09:22:49.725785+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:22:49.725755+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "4bf7b9a6-853d-4c8a-a245-d71337153577",
+      "timestamp": "2025-08-25T09:23:00.721799+00:00",
+      "event_type": "error_occurred",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_registration",
+      "result": "error",
+      "details": {
+        "error": "数据库会话工厂未初始化",
+        "username": "testuser"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "27b0c429-4949-4e7a-8649-42ccdbcf8861",
+      "timestamp": "2025-08-25T09:23:42.715117+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:23:42.715088+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "5ac793be-886c-4e66-8f4a-8d8580e5ac74",
+      "timestamp": "2025-08-25T09:23:55.834792+00:00",
+      "event_type": "error_occurred",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_registration",
+      "result": "error",
+      "details": {
+        "error": "数据库会话工厂未初始化",
+        "username": "testuser2"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "8efb24a6-5f7c-47a2-9db4-d5df940d333b",
+      "timestamp": "2025-08-25T09:24:53.471610+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:24:53.471560+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "eccbfc25-22e5-487c-aee6-446bde720e70",
+      "timestamp": "2025-08-25T09:24:54.996424+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:24:54.996390+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "4bb6dda8-7c31-45a8-9b67-475920f2e9cc",
+      "timestamp": "2025-08-25T09:25:03.937465+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:25:03.937431+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "00883a13-7d9b-4cbc-95a6-aab7d57a2387",
+      "timestamp": "2025-08-25T09:25:05.404727+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:25:05.404693+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "f62f74a7-0c5d-41c1-8419-b8ccc85e22a5",
+      "timestamp": "2025-08-25T09:25:16.845632+00:00",
+      "event_type": "error_occurred",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_registration",
+      "result": "error",
+      "details": {
+        "error": "数据库会话工厂未初始化",
+        "username": "testuser2"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "6dc94e9d-66b9-4690-8c49-6493856cb972",
+      "timestamp": "2025-08-25T09:26:00.547124+00:00",
+      "event_type": "error_occurred",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_registration",
+      "result": "error",
+      "details": {
+        "error": "数据库会话工厂未初始化",
+        "username": "testuser3"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "593faddd-9e4f-4691-8154-286dda09b83e",
+      "timestamp": "2025-08-25T09:26:31.699067+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:26:31.699036+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "3bab7919-509c-4922-98f6-a20c73f4730c",
+      "timestamp": "2025-08-25T09:26:33.258218+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:26:33.258190+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "aa359657-c4a8-4044-aed2-fd75feb1d897",
+      "timestamp": "2025-08-25T09:26:44.014618+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:26:44.014586+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "2f98ac1e-1c5d-47fa-99fc-49c3011e7d73",
+      "timestamp": "2025-08-25T09:26:45.216890+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:26:45.216852+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "5ca80730-e3c4-419e-8289-7b2b2ba72aa6",
+      "timestamp": "2025-08-25T09:27:08.799601+00:00",
+      "event_type": "error_occurred",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_registration",
+      "result": "error",
+      "details": {
+        "error": "数据库会话工厂未初始化",
+        "username": "testuser4"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "bbe29565-f017-4cb4-a04c-60bb1215ad9f",
+      "timestamp": "2025-08-25T09:28:12.116017+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:28:12.115904+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "fc507fc5-b6a2-41b7-acd3-8fe33c825d64",
+      "timestamp": "2025-08-25T09:28:13.205377+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:28:13.205348+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "7ad3720e-1491-421f-8fcc-73f3f4912641",
+      "timestamp": "2025-08-25T09:28:25.413684+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:28:25.413648+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "176a5616-10a5-45e7-8b91-1b707b723522",
+      "timestamp": "2025-08-25T09:28:26.552576+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:28:26.552529+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "29455de1-f4cf-4702-848e-5b994edb7594",
+      "timestamp": "2025-08-25T09:28:47.348422+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:28:47.348278+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b6e154b8-67fc-45b3-8f9c-f3d5c177e910",
+      "timestamp": "2025-08-25T09:28:48.575073+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:28:48.575043+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "537fd633-7f64-4713-b6d1-01482c0b113a",
+      "timestamp": "2025-08-25T09:29:12.927192+00:00",
+      "event_type": "error_occurred",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_registration",
+      "result": "error",
+      "details": {
+        "error": "数据库会话工厂未初始化",
+        "username": "testuser123"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "c049ba85-9a11-4ed5-94ff-eb9fe5e67e84",
+      "timestamp": "2025-08-25T09:30:33.706935+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:30:33.706903+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b939bbe6-60cd-4399-8fac-dc5d77da9a7a",
+      "timestamp": "2025-08-25T09:30:35.181037+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:30:35.181008+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "58351b3b-01df-4528-8bfd-e5cc24ca082b",
+      "timestamp": "2025-08-25T09:33:56.114406+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:33:56.114377+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "7bbbd5b6-58d5-4756-877a-25b07b870907",
+      "timestamp": "2025-08-25T09:34:05.258997+00:00",
+      "event_type": "error_occurred",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_registration",
+      "result": "error",
+      "details": {
+        "error": "数据库会话工厂未初始化",
+        "username": "testuser123"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "1cbbe029-e9f5-43ba-9c2c-e3eb6b00471b",
+      "timestamp": "2025-08-25T09:34:28.250163+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:34:28.250133+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b566642e-113d-4a9b-a236-98536acbae57",
+      "timestamp": "2025-08-25T09:34:29.294449+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:34:29.294422+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "8efd37ac-fafb-4433-ad64-6abd8c69a0a3",
+      "timestamp": "2025-08-25T09:34:41.565121+00:00",
+      "event_type": "error_occurred",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_registration",
+      "result": "error",
+      "details": {
+        "error": "数据库会话工厂未初始化",
+        "username": "testuser456",
+        "traceback": "Traceback (most recent call last):\n  File \"D:\\XRAK\\URAK\\psx\\app\\api\\auth.py\", line 358, in register\n    user = await user_repository.create_user(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n    )\n    ^\n  File \"D:\\XRAK\\URAK\\psx\\app\\models\\user.py\", line 46, in create_user\n    async with self.db_manager.get_session() as session:\n               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Python313\\Lib\\contextlib.py\", line 214, in __aenter__\n    return await anext(self.gen)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\XRAK\\URAK\\psx\\app\\core\\database.py\", line 299, in get_session\n    raise RuntimeError(\"数据库会话工厂未初始化\")\nRuntimeError: 数据库会话工厂未初始化\n"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b2901c09-4fd9-4fbd-ade8-c65eb60d8164",
+      "timestamp": "2025-08-25T09:35:30.378199+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:35:30.378170+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "bc108d8a-3eb4-44c9-b2cb-eb0f46e0b138",
+      "timestamp": "2025-08-25T09:35:31.912536+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:35:31.912508+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "3f27fe95-03cb-4f1e-a6e7-3eee444dbe64",
+      "timestamp": "2025-08-25T09:35:41.550209+00:00",
+      "event_type": "error_occurred",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_registration",
+      "result": "error",
+      "details": {
+        "error": "数据库会话工厂未初始化",
+        "username": "testuser789",
+        "traceback": "Traceback (most recent call last):\n  File \"D:\\XRAK\\URAK\\psx\\app\\api\\auth.py\", line 358, in register\n    user = await user_repository.create_user(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n    )\n    ^\n  File \"D:\\XRAK\\URAK\\psx\\app\\models\\user.py\", line 46, in create_user\n    async with self.db_manager.get_session() as session:\n               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Python313\\Lib\\contextlib.py\", line 214, in __aenter__\n    return await anext(self.gen)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\XRAK\\URAK\\psx\\app\\core\\database.py\", line 299, in get_session\n    raise RuntimeError(\"数据库会话工厂未初始化\")\nRuntimeError: 数据库会话工厂未初始化\n"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "aa1de3ad-41bc-4e80-91db-82be390ef50e",
+      "timestamp": "2025-08-25T09:36:28.659006+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:36:28.658968+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "86c3507f-dab9-4ad9-91cd-50fc8b876508",
+      "timestamp": "2025-08-25T09:36:31.208493+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:36:31.208448+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "50cb4bdb-b2ca-4482-b91f-fc6f64547114",
+      "timestamp": "2025-08-25T09:36:43.041412+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:36:43.041378+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "83205834-400e-4a45-901d-1e157c093ced",
+      "timestamp": "2025-08-25T09:36:45.547861+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:36:45.547814+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "e993d6bf-b1c1-4156-893c-d400806b96d3",
+      "timestamp": "2025-08-25T09:36:56.316732+00:00",
+      "event_type": "user_created",
+      "severity": "low",
+      "user_id": "82000562-a62f-49bf-9d0d-62fbe5881289",
+      "username": "testuser999",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_registration",
+      "result": "success",
+      "details": {
+        "email": "testuser999@example.com",
+        "role": "user"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "cf79eb06-875e-4dec-a2d8-425300ec8a87",
+      "timestamp": "2025-08-25T09:37:14.553899+00:00",
+      "event_type": "error_occurred",
+      "severity": "critical",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "unhandled_exception",
+      "result": "failed",
+      "details": {
+        "exception_type": "TypeError",
+        "exception_message": "object LoginResponse can't be used in 'await' expression",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "45989e27-3eb4-42c4-9395-f256424d803d",
+      "timestamp": "2025-08-25T09:37:51.341516+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:37:51.341481+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "615c6499-597e-4239-af66-ff75786bcea0",
+      "timestamp": "2025-08-25T09:37:53.488345+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:37:53.488314+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "3233abd1-49ac-414b-a13b-710fc95e6a3c",
+      "timestamp": "2025-08-25T09:38:03.339848+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "testuser999",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: cannot unpack non-iterable coroutine object",
+        "timestamp": "2025-08-25T09:38:03.339816+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "bd5e548c-ed4f-49bf-8666-4a92d0ce0143",
+      "timestamp": "2025-08-25T09:38:03.342877+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: cannot unpack non-iterable coroutine object",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "f59eeaf3-6f40-4ae7-831e-d05cbd596597",
+      "timestamp": "2025-08-25T09:38:29.674188+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:38:29.674159+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "e0074b5d-5226-4e55-a1ab-4b2f5b5e8373",
+      "timestamp": "2025-08-25T09:38:32.233754+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:38:32.233704+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "184fa386-6f36-49f5-ac96-76188251004a",
+      "timestamp": "2025-08-25T09:38:37.497428+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:38:37.497365+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "4cdb511f-b150-4155-8f92-a12b9e397037",
+      "timestamp": "2025-08-25T09:38:39.688890+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:38:39.688855+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "f870263c-1e48-4888-bd9e-895ed214f1a2",
+      "timestamp": "2025-08-25T09:38:47.162933+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "testuser999",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: 'username' is an invalid keyword argument for LoginLog",
+        "timestamp": "2025-08-25T09:38:47.162904+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "17d744c8-6ae9-4ebe-a57a-7bb6e2ff91b4",
+      "timestamp": "2025-08-25T09:38:47.166013+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: 'username' is an invalid keyword argument for LoginLog",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "6575aa60-4f20-4690-aab5-4413d9a11e35",
+      "timestamp": "2025-08-25T09:39:23.208402+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:39:23.208317+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "121ed1a2-d516-4193-93e5-9f52030d9468",
+      "timestamp": "2025-08-25T09:39:25.343910+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:39:25.343856+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "cb978cbf-c25e-4645-8fac-4079a5e5d70b",
+      "timestamp": "2025-08-25T09:39:37.719014+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "testuser999",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: cannot unpack non-iterable User object",
+        "timestamp": "2025-08-25T09:39:37.718909+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "baee2b1a-41bf-4aa5-be96-035d5fcee046",
+      "timestamp": "2025-08-25T09:39:37.728469+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 5,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "9fe08a69-135c-420f-963e-156f4ddc240e",
+      "timestamp": "2025-08-25T09:39:37.731484+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: cannot unpack non-iterable User object",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "95e4900f-1cbe-45be-8287-e7f716206243",
+      "timestamp": "2025-08-25T09:40:03.269102+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:40:03.269059+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "70711b5d-f336-4f45-a771-8e99f8e8f691",
+      "timestamp": "2025-08-25T09:40:05.953409+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:40:05.953364+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b7a72231-f5b2-41d3-9161-78777e0a89af",
+      "timestamp": "2025-08-25T09:40:31.155237+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "testuser999",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: 'User' object has no attribute 'active_sessions'",
+        "timestamp": "2025-08-25T09:40:31.155178+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "3c2b7f4e-dec1-418e-a432-4ba23814d70b",
+      "timestamp": "2025-08-25T09:40:31.161811+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 6,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b6b2efea-b05e-411c-86b3-8db1eecfad89",
+      "timestamp": "2025-08-25T09:40:31.164765+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: 'User' object has no attribute 'active_sessions'",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "1c9fb78a-7f54-47aa-be13-0ff946a96b2e",
+      "timestamp": "2025-08-25T09:40:48.273415+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:40:48.273338+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b8e73fe1-a352-4cb6-82ce-fc0d8a9404f8",
+      "timestamp": "2025-08-25T09:40:50.419583+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:40:50.419550+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "edb5ea72-d770-413d-a708-0c6bea8dc816",
+      "timestamp": "2025-08-25T09:40:57.589706+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "testuser999",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: 'str' object has no attribute 'value'",
+        "timestamp": "2025-08-25T09:40:57.589677+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "05af8f3e-e17d-4538-9fd3-5f28bfcc1e29",
+      "timestamp": "2025-08-25T09:40:57.592919+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 7,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "37bff274-e215-45a3-949f-4fadd26a474b",
+      "timestamp": "2025-08-25T09:40:57.595926+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: 'str' object has no attribute 'value'",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "4afef352-510d-40ef-854e-5321e422cdf2",
+      "timestamp": "2025-08-25T09:41:14.156196+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:41:14.156100+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "9d63c62c-3f32-4f0b-8a22-f59f2bae11eb",
+      "timestamp": "2025-08-25T09:41:16.318487+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:41:16.318453+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "a119b73a-85e5-4fa0-9397-e51f929b91c6",
+      "timestamp": "2025-08-25T09:41:23.423180+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "testuser999",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: 'str' object has no attribute 'value'",
+        "timestamp": "2025-08-25T09:41:23.423158+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "e8970092-0cdf-4ecc-8f1e-37c8d0b37c3d",
+      "timestamp": "2025-08-25T09:41:23.426421+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 8,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "42ea9207-0558-4c53-a799-37681686dd55",
+      "timestamp": "2025-08-25T09:41:23.429467+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: 'str' object has no attribute 'value'",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "2455f278-4188-4869-bfb6-465fb77ef330",
+      "timestamp": "2025-08-25T09:41:45.650685+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:41:45.650617+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "35b79137-df31-48ea-9139-37981013d03c",
+      "timestamp": "2025-08-25T09:41:47.812356+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:41:47.812311+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "849a84dc-cefc-4aa8-965e-287507d8fec6",
+      "timestamp": "2025-08-25T09:41:57.093522+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "testuser999",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: 'str' object has no attribute 'value'",
+        "timestamp": "2025-08-25T09:41:57.093491+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "42e0f510-db22-4a04-93af-2c4f14c86bc2",
+      "timestamp": "2025-08-25T09:41:57.098550+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 9,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "9510260a-491b-4000-8572-11e52d72c2f6",
+      "timestamp": "2025-08-25T09:41:57.102152+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: 'str' object has no attribute 'value'",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "1920bbab-7658-49d0-8ec6-8ce395987767",
+      "timestamp": "2025-08-25T09:42:22.850114+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:42:22.850009+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "20189ff4-2ac5-4f40-b107-ba84747da20d",
+      "timestamp": "2025-08-25T09:42:25.008469+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:42:25.008419+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "34b5a69d-b521-49e2-a417-fc6f7072e415",
+      "timestamp": "2025-08-25T09:42:30.829938+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "82000562-a62f-49bf-9d0d-62fbe5881289",
+      "username": "testuser999",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T09:42:30.829917+00:00"
+      },
+      "session_id": "9dc90998-b19d-4a67-8c37-3567aa6a79a1",
+      "request_id": null
+    },
+    {
+      "id": "588179a9-1144-4eae-9d48-7d41e0802127",
+      "timestamp": "2025-08-25T09:43:08.734600+00:00",
+      "event_type": "error_occurred",
+      "severity": "critical",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "unhandled_exception",
+      "result": "failed",
+      "details": {
+        "exception_type": "AttributeError",
+        "exception_message": "'AuditLogger' object has no attribute 'AuditEventType'",
+        "path": "/api/auth/me",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "cb2cae84-f2cc-4f9a-80bb-5f83dfd84923",
+      "timestamp": "2025-08-25T09:43:30.528445+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:43:30.528396+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "f9783afc-2c2e-4909-8f4b-1254e4eecb42",
+      "timestamp": "2025-08-25T09:43:32.660273+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:43:32.660234+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "5de30f60-ca69-4b96-90de-4ecba9518d89",
+      "timestamp": "2025-08-25T09:43:49.028121+00:00",
+      "event_type": "access_denied",
+      "severity": "medium",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "token_validation",
+      "result": "failed",
+      "details": {
+        "error": "Token validation failed: 'coroutine' object has no attribute 'can_login'"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b77cccf2-4b64-470f-8485-9db7856f6557",
+      "timestamp": "2025-08-25T09:43:49.031654+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Token validation failed: 'coroutine' object has no attribute 'can_login'",
+        "path": "/api/auth/me",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "fc05d1fa-51eb-4411-8f00-d57d394fb1e0",
+      "timestamp": "2025-08-25T09:44:32.628596+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:44:32.628493+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "92f11558-ba37-4e08-93fe-9d5be11e4edc",
+      "timestamp": "2025-08-25T09:44:34.752504+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:44:34.752450+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "cc0070d2-c30d-49a5-b1f2-8bc10e9cf5f3",
+      "timestamp": "2025-08-25T09:44:39.191911+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:44:39.191879+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "6fed557b-cc19-4185-9689-b1ec306b4ac9",
+      "timestamp": "2025-08-25T09:44:41.390786+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:44:41.390741+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "89f3ad5a-214a-4a76-a082-e572245194f1",
+      "timestamp": "2025-08-25T09:44:55.873669+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:44:55.873622+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "ef7962d6-b6f1-4ecd-8fbf-3b7e65dc10e3",
+      "timestamp": "2025-08-25T09:44:57.997064+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:44:57.997031+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "eb89e017-b6c4-4876-b98d-318e76a72349",
+      "timestamp": "2025-08-25T09:45:46.507018+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:45:46.506973+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "800727cc-b7d3-44fa-b034-3a9045fdbac0",
+      "timestamp": "2025-08-25T09:45:49.120979+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:45:49.120940+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "64e4cb8f-a7b7-4c68-95f3-64d6abaf29bb",
+      "timestamp": "2025-08-25T09:45:59.187346+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:45:59.187298+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "e319b1c8-2e2e-4477-8e33-4ddbd9ece752",
+      "timestamp": "2025-08-25T09:46:01.290474+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:46:01.290429+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "321fd564-80e9-4c91-9620-1f2348e49af1",
+      "timestamp": "2025-08-25T09:46:15.192280+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:46:15.192183+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "540c50a4-fa41-4b58-82f4-f17db9144da7",
+      "timestamp": "2025-08-25T09:46:17.349212+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:46:17.349183+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "5fb41f18-afe6-4509-9243-1b212e5ca4a3",
+      "timestamp": "2025-08-25T09:46:38.722993+00:00",
+      "event_type": "access_denied",
+      "severity": "medium",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "token_validation",
+      "result": "failed",
+      "details": {
+        "error": "Invalid or expired token"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "60e94269-022a-41c5-9617-82db2c0f222e",
+      "timestamp": "2025-08-25T09:46:38.726640+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Invalid or expired token",
+        "path": "/api/auth/me",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "4ccad57b-6abc-4bd3-befe-d24c6c59d1bf",
+      "timestamp": "2025-08-25T09:46:45.917563+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "admin",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('c0e8a2d5-fdd9-4f75-aa41-aeb882a54e5f', '127.0.0.1', 'Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 9, 46, 45, 903144), datetime.datetime(2025, 8, 25, 9, 46, 45, 904325, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "timestamp": "2025-08-25T09:46:45.917538+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "a9f21100-4151-473f-bfec-0dec6c765365",
+      "timestamp": "2025-08-25T09:46:45.921622+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 8,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "ee33057c-091b-4c3a-9f9b-bc4abad5d590",
+      "timestamp": "2025-08-25T09:46:45.925408+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('c0e8a2d5-fdd9-4f75-aa41-aeb882a54e5f', '127.0.0.1', 'Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 9, 46, 45, 903144), datetime.datetime(2025, 8, 25, 9, 46, 45, 904325, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "6ebd118d-0f7e-42a0-9fa2-1464f0eb086a",
+      "timestamp": "2025-08-25T09:47:06.758150+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Authentication failed",
+        "timestamp": "2025-08-25T09:47:06.758112+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "999001fc-12c3-45b7-b7e3-50aee4db529c",
+      "timestamp": "2025-08-25T09:47:06.762290+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 9,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "58c5a28b-a1bc-4f01-80f1-0cb75cdc7bbb",
+      "timestamp": "2025-08-25T09:47:06.765850+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Authentication failed",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "311d08b5-bc79-4f59-9660-a5a5dad7a444",
+      "timestamp": "2025-08-25T09:47:29.472343+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:47:29.472228+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "d1dc1807-d71a-4106-96e6-6a8a96f44826",
+      "timestamp": "2025-08-25T09:47:31.697706+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:47:31.697661+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "ac66cccb-a5f2-43fa-9fb7-ceeba4a2e4bd",
+      "timestamp": "2025-08-25T09:47:46.651042+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:47:46.651006+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "0023324f-7cfb-49e9-bed6-63879c249d40",
+      "timestamp": "2025-08-25T09:47:48.819313+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:47:48.819262+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "bd4cad9d-7d69-4bf2-9aad-d6eba4a27780",
+      "timestamp": "2025-08-25T09:48:04.314898+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T09:48:04.314877+00:00"
+      },
+      "session_id": "0ca44c87-b98f-4ad6-9cd7-8cd6fa21d6a6",
+      "request_id": null
+    },
+    {
+      "id": "21dac338-c264-4e3e-a91b-03957dcbe50e",
+      "timestamp": "2025-08-25T09:48:11.224320+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T09:48:11.224300+00:00"
+      },
+      "session_id": "2335f8ca-dc9d-4673-882f-72623bae73f1",
+      "request_id": null
+    },
+    {
+      "id": "83702973-e869-49bf-9675-1380b192e3c2",
+      "timestamp": "2025-08-25T09:48:11.284357+00:00",
+      "event_type": "access_denied",
+      "severity": "medium",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "token_validation",
+      "result": "failed",
+      "details": {
+        "error": "Token validation failed: 'User' object has no attribute 'can_login'"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "5d9cf908-e9ef-4c16-86cf-7ee4a6b4f08f",
+      "timestamp": "2025-08-25T09:48:11.288427+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Token validation failed: 'User' object has no attribute 'can_login'",
+        "path": "/api/auth/me",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "814b3e25-2b73-4484-bd1f-ced707280ee2",
+      "timestamp": "2025-08-25T09:49:12.097968+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:49:12.097936+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "99fa86b4-78be-4750-b7e8-d1129b4c18ef",
+      "timestamp": "2025-08-25T09:49:14.729373+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:49:14.729325+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "70f3c451-1d66-439c-b767-5dab2db3da1c",
+      "timestamp": "2025-08-25T09:51:52.919258+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:51:52.919216+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "f87f12e3-6bd2-4a92-8781-e57b89d561b8",
+      "timestamp": "2025-08-25T09:51:56.900078+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T09:51:56.900035+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "335ddf0f-e576-4df0-b442-f82a097f6680",
+      "timestamp": "2025-08-25T09:53:20.794768+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T09:53:20.794742+00:00"
+      },
+      "session_id": "dc8fc874-a654-4937-9c5b-3c38076ec0d4",
+      "request_id": null
+    },
+    {
+      "id": "8f6bd88c-c2f6-496b-92be-ec0aa5e02f59",
+      "timestamp": "2025-08-25T09:53:44.672908+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T09:53:44.672876+00:00"
+      },
+      "session_id": "dd3d52ee-e982-4d84-9e55-fea91f67f30d",
+      "request_id": null
+    },
+    {
+      "id": "e09b0276-1525-4fb8-b25f-6d04f1f02fe0",
+      "timestamp": "2025-08-25T10:00:02.342095+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:00:02.342060+00:00"
+      },
+      "session_id": "12ba0429-e4a9-4e6a-8489-14af31f1339c",
+      "request_id": null
+    },
+    {
+      "id": "3d4e7eba-6f4a-41cc-8d8e-60062553a46a",
+      "timestamp": "2025-08-25T10:00:14.519156+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:00:14.519122+00:00"
+      },
+      "session_id": "b768a085-d898-4d61-8a45-a21dfcc8b287",
+      "request_id": null
+    },
+    {
+      "id": "c43c8a4e-22ef-4272-b755-1e25093c6919",
+      "timestamp": "2025-08-25T10:04:47.403302+00:00",
+      "event_type": "access_denied",
+      "severity": "medium",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "token_validation",
+      "result": "failed",
+      "details": {
+        "error": "Invalid or expired token"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "fa7d6058-1aba-4fe6-8054-3a4a895466ad",
+      "timestamp": "2025-08-25T10:04:47.409805+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Invalid or expired token",
+        "path": "/api/auth/validate",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "6a0736b1-71ee-4446-89ef-3ddf9ac6d788",
+      "timestamp": "2025-08-25T10:05:28.667305+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "admin",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('0fc9de4f-7c90-4e25-88de-b4f072204a09', '127.0.0.1', 'Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 10, 5, 28, 655947), datetime.datetime(2025, 8, 25, 10, 5, 28, 656333, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "timestamp": "2025-08-25T10:05:28.667278+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "8b6865e9-286d-4353-a3b7-3d4b970fe808",
+      "timestamp": "2025-08-25T10:05:28.671861+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 10,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "ce8fd518-7438-4ada-9551-ab3cca5eee0b",
+      "timestamp": "2025-08-25T10:05:28.675860+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('0fc9de4f-7c90-4e25-88de-b4f072204a09', '127.0.0.1', 'Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 10, 5, 28, 655947), datetime.datetime(2025, 8, 25, 10, 5, 28, 656333, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "8788ff81-2a08-426e-a97f-bcc69cee2c54",
+      "timestamp": "2025-08-25T10:05:39.522649+00:00",
+      "event_type": "access_denied",
+      "severity": "medium",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "token_validation",
+      "result": "failed",
+      "details": {
+        "error": "Token validation failed: 'User' object has no attribute 'get_session'"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "114fb3cd-eaaa-469e-a73d-b51e8969b9a4",
+      "timestamp": "2025-08-25T10:05:39.526970+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Token validation failed: 'User' object has no attribute 'get_session'",
+        "path": "/api/auth/validate",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "c1274c72-aee1-4ac8-b970-efcb38977788",
+      "timestamp": "2025-08-25T10:05:51.614881+00:00",
+      "event_type": "access_denied",
+      "severity": "medium",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "token_validation",
+      "result": "failed",
+      "details": {
+        "error": "Token validation failed: 'User' object has no attribute 'get_session'"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "3f3d563b-2f7a-44bd-869a-95634aa1be89",
+      "timestamp": "2025-08-25T10:05:51.619366+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Token validation failed: 'User' object has no attribute 'get_session'",
+        "path": "/api/auth/validate",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "af25b8ec-c7ff-4606-ade0-331e22077531",
+      "timestamp": "2025-08-25T10:06:18.997989+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:06:18.997901+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "ea2f68b4-bcac-4b63-8c31-6a76496b7f56",
+      "timestamp": "2025-08-25T10:06:21.547202+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:06:21.547166+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "ef501c88-596f-4bb7-91d3-bf7fc8307523",
+      "timestamp": "2025-08-25T10:06:43.006877+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:06:43.006846+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "bfae5c0a-86f7-4182-b1b3-bf482929eb46",
+      "timestamp": "2025-08-25T10:06:45.594059+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:06:45.594027+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "5ff535d4-1bf6-4ee5-b826-dc605c7e99d0",
+      "timestamp": "2025-08-25T10:06:57.414048+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:06:57.414014+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "38edbfeb-5f05-4eca-b57d-c9d32b8a7f92",
+      "timestamp": "2025-08-25T10:07:12.930299+00:00",
+      "event_type": "access_denied",
+      "severity": "medium",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "token_validation",
+      "result": "failed",
+      "details": {
+        "error": "Invalid or expired token"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b66e8e9e-6be6-43ee-a328-ee523a775b74",
+      "timestamp": "2025-08-25T10:07:12.934898+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Invalid or expired token",
+        "path": "/api/auth/validate",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "a6274117-37d1-4d41-8679-3fc5885d56f0",
+      "timestamp": "2025-08-25T10:07:19.470741+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "admin",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('0a9f6c8c-f01b-475f-812a-478455c336c5', '127.0.0.1', 'Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 10, 7, 19, 459171), datetime.datetime(2025, 8, 25, 10, 7, 19, 460537, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "timestamp": "2025-08-25T10:07:19.470716+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "11e52b54-7190-4af2-a192-4a31f67c6d39",
+      "timestamp": "2025-08-25T10:07:19.475459+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 11,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "89c9af58-4a19-4f58-adbe-e4eb4cdcfcf9",
+      "timestamp": "2025-08-25T10:07:19.480231+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('0a9f6c8c-f01b-475f-812a-478455c336c5', '127.0.0.1', 'Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 10, 7, 19, 459171), datetime.datetime(2025, 8, 25, 10, 7, 19, 460537, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "17d74f5d-b8c0-4591-ac8d-afbab0a77cd9",
+      "timestamp": "2025-08-25T10:08:04.340553+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:08:04.340441+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "49f98243-5de0-455f-b101-bf19029cdd7a",
+      "timestamp": "2025-08-25T10:08:18.590844+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:08:18.590811+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "13319761-c8b0-41a0-9098-57c6c5152a58",
+      "timestamp": "2025-08-25T10:08:27.864087+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:08:27.864064+00:00"
+      },
+      "session_id": "05026f28-32ed-4980-a393-dfc15f7a5d30",
+      "request_id": null
+    },
+    {
+      "id": "6fec972c-8ac9-4227-995e-209edea6a81b",
+      "timestamp": "2025-08-25T10:08:38.545285+00:00",
+      "event_type": "error_occurred",
+      "severity": "critical",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4768",
+      "resource": null,
+      "action": "unhandled_exception",
+      "result": "failed",
+      "details": {
+        "exception_type": "AttributeError",
+        "exception_message": "'str' object has no attribute 'value'",
+        "path": "/api/auth/validate",
+        "method": "GET"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "62e64a04-8b87-4792-aea7-b74bc9a87387",
+      "timestamp": "2025-08-25T10:08:58.754087+00:00",
+      "event_type": "system_shutdown",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_shutdown",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:08:58.754054+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "42dd7872-8010-43cf-93db-89a0ab3fd882",
+      "timestamp": "2025-08-25T10:09:01.319642+00:00",
+      "event_type": "system_start",
+      "severity": "low",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "system",
+      "resource": null,
+      "action": "server_startup",
+      "result": "success",
+      "details": {
+        "timestamp": "2025-08-25T10:09:01.319607+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "595d920d-5799-4a71-80f0-2b8a5c50a610",
+      "timestamp": "2025-08-25T10:09:50.127172+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:09:50.127147+00:00"
+      },
+      "session_id": "d359043d-3e20-447c-9524-bd8773b882e4",
+      "request_id": null
+    },
+    {
+      "id": "814d462d-16f1-45ad-8621-5a934177a1ae",
+      "timestamp": "2025-08-25T10:09:55.561390+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:09:55.561350+00:00"
+      },
+      "session_id": "5d96743f-d226-4d63-93ba-9709d72a04c2",
+      "request_id": null
+    },
+    {
+      "id": "3fad9773-cb07-4a39-9780-b79f7def372f",
+      "timestamp": "2025-08-25T10:12:48.575835+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:12:48.575815+00:00"
+      },
+      "session_id": "09b7dadb-40e2-403b-ad64-a3264e0b689e",
+      "request_id": null
+    },
+    {
+      "id": "d9a83885-4999-4b55-a0e8-9c05268b6fe4",
+      "timestamp": "2025-08-25T10:14:05.875249+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "admin",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('2b7c5add-7a00-46d7-a9c6-777be863d153', '127.0.0.1', 'node', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 10, 14, 5, 863235), datetime.datetime(2025, 8, 25, 10, 14, 5, 863515, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "timestamp": "2025-08-25T10:14:05.875223+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "efdeef30-14ff-46f4-b8a4-d8609a105b9e",
+      "timestamp": "2025-08-25T10:14:05.880409+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 5,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "c4bd59dd-708c-4304-b538-c1a752dfdcb1",
+      "timestamp": "2025-08-25T10:14:05.885660+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('2b7c5add-7a00-46d7-a9c6-777be863d153', '127.0.0.1', 'node', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 10, 14, 5, 863235), datetime.datetime(2025, 8, 25, 10, 14, 5, 863515, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "c5a230f8-de09-43c3-bf59-4f1c72092a00",
+      "timestamp": "2025-08-25T10:14:35.818625+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "admin",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('923971dc-9bd3-43d3-9680-8b6a2ce2c0f6', '127.0.0.1', 'node', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 10, 14, 35, 804945), datetime.datetime(2025, 8, 25, 10, 14, 35, 805202, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "timestamp": "2025-08-25T10:14:35.818601+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "7983e606-7595-41b6-a9dc-36dc65edd77b",
+      "timestamp": "2025-08-25T10:14:35.823519+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 6,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "eeae02ad-a625-4b32-810a-d3b884a494a8",
+      "timestamp": "2025-08-25T10:14:35.828173+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('923971dc-9bd3-43d3-9680-8b6a2ce2c0f6', '127.0.0.1', 'node', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 10, 14, 35, 804945), datetime.datetime(2025, 8, 25, 10, 14, 35, 805202, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "d54944ac-076d-49cb-a4ff-6d70e48fa846",
+      "timestamp": "2025-08-25T10:15:10.368244+00:00",
+      "event_type": "login_failed",
+      "severity": "medium",
+      "user_id": null,
+      "username": "admin",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "failed",
+      "details": {
+        "failure_reason": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('c96d4201-9158-4f0c-b2ea-3d5a16829f4c', '127.0.0.1', 'node', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 10, 15, 10, 356398), datetime.datetime(2025, 8, 25, 10, 15, 10, 356708, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "timestamp": "2025-08-25T10:15:10.368219+00:00"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "3909ca7c-c8d9-4d9a-8faf-b73d84e08175",
+      "timestamp": "2025-08-25T10:15:10.373670+00:00",
+      "event_type": "suspicious_activity",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "pattern_analysis",
+      "result": "detected",
+      "details": {
+        "pattern_type": "multiple_failed_logins",
+        "failure_count": 7,
+        "time_window_minutes": 30
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "cbca98c5-babd-4dea-a0d4-a147e0261435",
+      "timestamp": "2025-08-25T10:15:10.378487+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_401",
+      "result": "failed",
+      "details": {
+        "status_code": 401,
+        "detail": "Login failed: (asyncmy.errors.IntegrityError) (1048, \"Column 'user_id' cannot be null\")\n[SQL: INSERT INTO login_logs (id, ip_address, user_agent, success, failure_reason, user_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]\n[parameters: ('c96d4201-9158-4f0c-b2ea-3d5a16829f4c', '127.0.0.1', 'node', 0, '用户不存在', None, datetime.datetime(2025, 8, 25, 10, 15, 10, 356398), datetime.datetime(2025, 8, 25, 10, 15, 10, 356708, tzinfo=datetime.timezone.utc))]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+        "path": "/api/auth/login",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "37f1c31d-873c-493b-a0e0-8ca15bf80c04",
+      "timestamp": "2025-08-25T10:15:44.789768+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:15:44.789744+00:00"
+      },
+      "session_id": "4eb7538a-03ac-4251-86e3-e4f9fdb5988c",
+      "request_id": null
+    },
+    {
+      "id": "9abfe829-b796-4653-a424-2f7435ac8b63",
+      "timestamp": "2025-08-25T10:18:57.463884+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:18:57.463853+00:00"
+      },
+      "session_id": "c9061c36-f3f2-4b32-b5e6-bbd8a1a3bdd7",
+      "request_id": null
+    },
+    {
+      "id": "09a32c5e-b01c-4e06-ac51-696d0ea38cb5",
+      "timestamp": "2025-08-25T10:21:07.321886+00:00",
+      "event_type": "csrf_attack_detected",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "csrf_attack",
+      "result": "blocked",
+      "details": {
+        "error": "CSRF token required",
+        "provided_token": false
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "5bef0ae0-de39-4f5d-9f96-9a2bfc5391d7",
+      "timestamp": "2025-08-25T10:21:07.327348+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_403",
+      "result": "failed",
+      "details": {
+        "status_code": 403,
+        "detail": "CSRF token validation failed",
+        "path": "/api/auth/logout",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "f57e6e59-3b30-48cc-ae9e-3aaffcc7d262",
+      "timestamp": "2025-08-25T10:21:35.508225+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:21:35.508153+00:00"
+      },
+      "session_id": "ace4cd39-f0c7-4b8e-a553-f910df945433",
+      "request_id": null
+    },
+    {
+      "id": "22e14b2c-0c27-47f7-a70f-349102e862ce",
+      "timestamp": "2025-08-25T10:21:44.323846+00:00",
+      "event_type": "csrf_attack_detected",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "csrf_attack",
+      "result": "blocked",
+      "details": {
+        "error": "CSRF token required",
+        "provided_token": false
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "faca2f3d-f44a-45fa-a804-6beff2100e08",
+      "timestamp": "2025-08-25T10:21:44.330972+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_403",
+      "result": "failed",
+      "details": {
+        "status_code": 403,
+        "detail": "CSRF token validation failed",
+        "path": "/api/auth/logout",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "e95aa9ab-1235-4193-ac75-965ec8a66368",
+      "timestamp": "2025-08-25T10:24:14.895617+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:24:14.895591+00:00"
+      },
+      "session_id": "3be93f65-84d0-4ffa-ac02-34e965a953e2",
+      "request_id": null
+    },
+    {
+      "id": "5d834900-2ea3-45ed-8e82-8a6f105cc3ec",
+      "timestamp": "2025-08-25T10:24:19.574799+00:00",
+      "event_type": "csrf_attack_detected",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "csrf_attack",
+      "result": "blocked",
+      "details": {
+        "error": "CSRF token required",
+        "provided_token": false
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "f9f3c703-44d0-47d8-99a9-57160daccc80",
+      "timestamp": "2025-08-25T10:24:19.585335+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_403",
+      "result": "failed",
+      "details": {
+        "status_code": 403,
+        "detail": "CSRF token validation failed",
+        "path": "/api/auth/logout",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "7506539c-ce93-4b25-b957-91a948ae5b09",
+      "timestamp": "2025-08-25T10:24:32.111309+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:24:32.111263+00:00"
+      },
+      "session_id": "6429e3b5-2d0e-41d8-8498-9aef9972abe1",
+      "request_id": null
+    },
+    {
+      "id": "370e0783-82dd-482e-b445-c24b963dd029",
+      "timestamp": "2025-08-25T10:24:35.977549+00:00",
+      "event_type": "csrf_attack_detected",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "csrf_attack",
+      "result": "blocked",
+      "details": {
+        "error": "CSRF token required",
+        "provided_token": false
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "e302857a-20f2-4bc1-bd27-565b1482f36b",
+      "timestamp": "2025-08-25T10:24:35.988559+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_403",
+      "result": "failed",
+      "details": {
+        "status_code": 403,
+        "detail": "CSRF token validation failed",
+        "path": "/api/auth/logout",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "3fcbc42f-db79-4ecf-8d9b-be9c4cbd9cd1",
+      "timestamp": "2025-08-25T10:24:50.211683+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:24:50.211636+00:00"
+      },
+      "session_id": "257a567d-f437-4188-b256-7c8d9e307381",
+      "request_id": null
+    },
+    {
+      "id": "41de3786-fb9c-4cb2-9af8-3a4e5505d535",
+      "timestamp": "2025-08-25T10:24:53.297812+00:00",
+      "event_type": "csrf_attack_detected",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "csrf_attack",
+      "result": "blocked",
+      "details": {
+        "error": "CSRF token required",
+        "provided_token": false
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "9b39401d-d5e7-4b03-9839-98d72d1e23d4",
+      "timestamp": "2025-08-25T10:24:53.308944+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_403",
+      "result": "failed",
+      "details": {
+        "status_code": 403,
+        "detail": "CSRF token validation failed",
+        "path": "/api/auth/logout",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "685120b1-23d2-4841-bc13-1dec3c49cc75",
+      "timestamp": "2025-08-25T10:28:06.941516+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T10:28:06.941489+00:00"
+      },
+      "session_id": "6e80fe00-82bc-42a5-8a7b-b7df4ca4134f",
+      "request_id": null
+    },
+    {
+      "id": "531e22da-7364-43ce-9f8a-a64edefe4b65",
+      "timestamp": "2025-08-25T10:28:14.818972+00:00",
+      "event_type": "csrf_attack_detected",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "csrf_attack",
+      "result": "blocked",
+      "details": {
+        "error": "CSRF token required",
+        "provided_token": false
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "c8859a6c-b075-448c-9a29-02b5d38665c6",
+      "timestamp": "2025-08-25T10:28:14.824808+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_403",
+      "result": "failed",
+      "details": {
+        "status_code": 403,
+        "detail": "CSRF token validation failed",
+        "path": "/api/auth/logout",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
     }
   ],
   "metadata": {
-    "total_events": 61,
-    "last_updated": "2025-08-24T15:13:58.090592+00:00",
+    "total_events": 266,
+    "last_updated": "2025-08-25T10:28:14.826014+00:00",
     "version": "1.0"
   }
 }

@@ -14,7 +14,7 @@ from sqlalchemy.ext.asyncio import (
     async_sessionmaker
 )
 from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.pool import QueuePool, StaticPool
+from sqlalchemy.pool import QueuePool, StaticPool, NullPool
 from sqlalchemy import event, text
 from sqlalchemy.exc import DisconnectionError, OperationalError
 from cryptography.fernet import Fernet
@@ -67,20 +67,8 @@ class DatabaseSecurity:
     def get_secure_connection_params(self) -> Dict[str, Any]:
         """获取安全连接参数"""
         return {
-            "connect_timeout": settings.DB_CONNECT_TIMEOUT,
-            "read_timeout": settings.DB_READ_TIMEOUT,
-            "write_timeout": settings.DB_WRITE_TIMEOUT,
             "charset": settings.DB_CHARSET,
-            "use_unicode": True,
-            "sql_mode": "STRICT_TRANS_TABLES,NO_ZERO_DATE,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER",
             "autocommit": False,
-            "ssl_disabled": settings.DB_SSL_MODE == "DISABLED",
-            "ssl_verify_cert": settings.DB_SSL_MODE == "VERIFY_CA",
-            "ssl_verify_identity": settings.DB_SSL_MODE == "VERIFY_IDENTITY",
-            "compress": True,
-            "max_allowed_packet": 16 * 1024 * 1024,  # 16MB
-            "local_infile": False,
-            "program_name": "PSX-Blog-System",
         }
     
     def validate_query(self, query: str) -> bool:
@@ -137,19 +125,11 @@ class DatabaseManager:
             # 获取安全连接参数
             secure_connect_args = self._security.get_secure_connection_params()
             
-            # 创建异步引擎，使用优化的连接池配置
+            # 创建异步引擎，使用适合异步的连接池配置
             self._engine = create_async_engine(
                 settings.DATABASE_URL,
-                poolclass=QueuePool,
-                pool_size=settings.DB_POOL_SIZE,
-                max_overflow=settings.DB_MAX_OVERFLOW,
-                pool_timeout=settings.DB_POOL_TIMEOUT,
-                pool_recycle=settings.DB_POOL_RECYCLE,
-                pool_pre_ping=settings.DB_POOL_PRE_PING,
-                pool_reset_on_return="commit",  # 归还连接时重置状态
-                pool_logging_name="psx_blog_pool",  # 连接池日志名称
+                poolclass=NullPool,  # 使用NullPool以支持异步，不使用连接池
                 echo=settings.DEBUG,
-                echo_pool=settings.DEBUG,
                 connect_args=secure_connect_args,
                 # 启用查询缓存和优化
                 execution_options={
@@ -236,14 +216,27 @@ class DatabaseManager:
             
             # 记录连接池监控数据
             pool = self._engine.pool
+            try:
+                # 尝试获取连接池信息（NullPool不支持这些方法）
+                active_conn = pool.checkedout()
+                idle_conn = pool.checkedin()
+                total_conn = pool.size()
+                overflow_conn = pool.overflow()
+            except AttributeError:
+                # NullPool不支持这些方法，使用默认值
+                active_conn = 0
+                idle_conn = 0
+                total_conn = 0
+                overflow_conn = 0
+            
             metrics = ConnectionMetrics(
                 timestamp=datetime.now(),
-                active_connections=pool.checkedout(),
-                idle_connections=pool.checkedin(),
-                total_connections=pool.size(),
-                pool_size=pool.size(),
-                overflow=pool.overflow(),
-                checked_out=pool.checkedout()
+                active_connections=active_conn,
+                idle_connections=idle_conn,
+                total_connections=total_conn,
+                pool_size=total_conn,
+                overflow=overflow_conn,
+                checked_out=active_conn
             )
             db_monitor.record_connection_metrics(metrics)
         
@@ -350,21 +343,40 @@ class DatabaseManager:
             return {"status": "disconnected"}
         
         pool = self._engine.pool
-        return {
+        status = {
             "status": "connected" if self._is_connected else "disconnected",
-            "pool_size": pool.size(),
-            "checked_in": pool.checkedin(),
-            "checked_out": pool.checkedout(),
-            "overflow": pool.overflow(),
-            "invalid": pool.invalid(),
+            "pool_type": type(pool).__name__,
             "stats": self._connection_pool_stats.copy(),
-            "total_connections": pool.size() + pool.overflow()
         }
+        
+        # NullPool没有这些方法，需要检查
+        try:
+            status.update({
+                "pool_size": pool.size(),
+                "checked_in": pool.checkedin(),
+                "checked_out": pool.checkedout(),
+                "overflow": pool.overflow(),
+                "invalid": pool.invalid(),
+                "total_connections": pool.size() + pool.overflow()
+            })
+        except AttributeError:
+            # NullPool不支持这些方法
+            status.update({
+                "pool_size": "N/A (NullPool)",
+                "checked_in": "N/A",
+                "checked_out": "N/A",
+                "overflow": "N/A",
+                "invalid": "N/A",
+                "total_connections": "N/A"
+            })
+        
+        return status
     
     async def health_check(self) -> Dict[str, Any]:
         """数据库健康检查"""
         health_status = {
             "database": "unknown",
+            "database_connected": False,
             "connection_pool": "unknown",
             "response_time_ms": None,
             "error": None
@@ -383,6 +395,7 @@ class DatabaseManager:
             
             health_status.update({
                 "database": "healthy",
+                "database_connected": True,
                 "connection_pool": "healthy",
                 "response_time_ms": round(response_time, 2)
             })
@@ -390,6 +403,7 @@ class DatabaseManager:
         except Exception as e:
             health_status.update({
                 "database": "unhealthy",
+                "database_connected": False,
                 "connection_pool": "unhealthy",
                 "error": str(e)
             })

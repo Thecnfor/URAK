@@ -293,3 +293,12 @@ jwt_manager = JWTManager()
 csrf_manager = CSRFManager()
 data_encryption = DataEncryption()
 security_validator = SecurityValidator()
+
+# Convenience functions for backward compatibility
+def verify_password(plain_password: str, hashed_password: str) -> bool:
+    """Verify password against hash."""
+    return password_manager.verify_password(plain_password, hashed_password)
+
+def get_password_hash(password: str) -> str:
+    """Hash password using bcrypt."""
+    return password_manager.hash_password(password)

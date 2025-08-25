@@ -46,12 +46,12 @@ class Settings(BaseSettings):
     MEMORY_THRESHOLD_HIGH: float = 85.0  # 内存高负载阈值（%）
     
     # 数据库配置
-    DATABASE_URL: str = "mysql+asyncmy://urak_user:secure_password_2024@192.168.1.10:3306/urak_blog?charset=utf8mb4"
+    DATABASE_URL: str = "mysql+asyncmy://XRAK:yj2mzx4BwMZYm4hf@192.168.1.10:3306/xrak?charset=utf8mb4"
     DB_HOST: str = "192.168.1.10"
     DB_PORT: int = 3306
-    DB_NAME: str = "urak_blog"
-    DB_USER: str = "urak_user"
-    DB_PASSWORD: str = "secure_password_2024"
+    DB_NAME: str = "xrak"
+    DB_USER: str = "XRAK"
+    DB_PASSWORD: str = "yj2mzx4BwMZYm4hf"
     DB_CHARSET: str = "utf8mb4"
     DB_COLLATION: str = "utf8mb4_unicode_ci"
     

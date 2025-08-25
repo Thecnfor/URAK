@@ -27,6 +27,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         username,
         password,
+        csrf_token: csrfToken,
       }),
     });
 
@@ -40,7 +41,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 从后端响应中提取令牌和用户信息
-    const { access_token, user, expires_in } = backendData.data;
+    const { access_token, user_info, expires_in } = backendData;
     
     // 设置安全的cookies
     const cookieStore = await cookies();
@@ -70,10 +71,10 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       message: '登录成功',
       user: {
-        id: user.user_id,
-        username: user.username,
-        email: user.email,
-        role: user.role,
+        id: user_info.id,
+        username: user_info.username,
+        email: user_info.email,
+        role: user_info.role,
         lastLogin: new Date().toISOString(),
       },
       sessionExpiry,

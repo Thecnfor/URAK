@@ -54,11 +54,15 @@ class UserRepository:
             if existing_email:
                 raise ValueError(f"邮箱 '{email}' 已存在")
             
+            # 生成密码盐值
+            salt = str(uuid.uuid4())[:32]
+            
             user = DBUser(
                 id=str(uuid.uuid4()),
                 username=username,
                 email=email,
                 password_hash=pwd_context.hash(password),
+                salt=salt,
                 role=role.value,
                 status=UserStatus.ACTIVE.value,
                 is_active=True,
@@ -154,7 +158,6 @@ class UserRepository:
             login_log = LoginLog(
                 id=str(uuid.uuid4()),
                 user_id=user.id if user else None,
-                username=username,
                 ip_address=ip_address,
                 user_agent=user_agent,
                 success=False,
@@ -201,7 +204,7 @@ class UserRepository:
             user_session = DBUserSession(
                 id=str(uuid.uuid4()),
                 user_id=user.id,
-                session_token=str(uuid.uuid4()),
+                session_id=str(uuid.uuid4()),
                 ip_address=ip_address,
                 user_agent=user_agent,
                 expires_at=datetime.utcnow() + timedelta(hours=24),
@@ -223,7 +226,7 @@ class UserRepository:
                 select(DBUserSession)
                 .where(
                     and_(
-                        DBUserSession.session_token == session_token,
+                        DBUserSession.session_id == session_token,
                         DBUserSession.is_active == True,
                         DBUserSession.expires_at > datetime.utcnow()
                     )
@@ -237,7 +240,7 @@ class UserRepository:
         async with self.db_manager.get_session() as session:
             result = await session.execute(
                 select(DBUserSession)
-                .where(DBUserSession.session_token == session_token)
+                .where(DBUserSession.session_id == session_token)
             )
             user_session = result.scalar_one_or_none()
             
@@ -306,6 +309,18 @@ class UserRepository:
                 query.order_by(DBUserSession.created_at.desc())
             )
             return result.scalars().all()
+    
+    async def update_session(self, session_obj: DBUserSession) -> bool:
+        """更新用户会话"""
+        try:
+            async with self.db_manager.get_session() as session:
+                # 合并会话对象到当前会话
+                session.add(session_obj)
+                await session.commit()
+                return True
+        except Exception as e:
+            logger.error(f"Failed to update session: {e}")
+            return False
 
 # 创建全局用户仓库实例的工厂函数
 def create_user_repository(db_manager: DatabaseManager) -> UserRepository:

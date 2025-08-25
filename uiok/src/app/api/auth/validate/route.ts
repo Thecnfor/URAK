@@ -54,18 +54,18 @@ export async function GET(request: NextRequest) {
     }
 
     // 从后端响应中提取用户信息
-    const { user, expires_in } = backendData.data;
+    const { user_id, username, role } = backendData;
     
-    // 计算会话过期时间
-    const sessionExpiry = Date.now() + (expires_in || 24 * 60 * 60) * 1000;
+    // 计算会话过期时间（默认24小时）
+    const sessionExpiry = Date.now() + 24 * 60 * 60 * 1000;
 
     // 返回用户信息
     return NextResponse.json({
       user: {
-        id: user.user_id,
-        username: user.username,
-        email: user.email,
-        role: user.role,
+        id: user_id,
+        username: username,
+        email: '', // 后端validate API没有返回email
+        role: role,
         lastLogin: new Date().toISOString(),
       },
       sessionExpiry,

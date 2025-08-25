@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { 
   loginUser, 
@@ -252,7 +253,16 @@ export default function LoginPage() {
             </button>
           </div>
 
-          <div className="text-center">
+          <div className="text-center space-y-4">
+            <div className="text-sm text-gray-600">
+              <p>
+                还没有账户？{' '}
+                <Link href="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  立即注册
+                </Link>
+              </p>
+            </div>
+            
             <div className="text-sm text-gray-600">
               <p>测试账户：</p>
               <p>管理员 - 用户名: admin, 密码: admin123</p>

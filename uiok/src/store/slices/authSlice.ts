@@ -37,7 +37,7 @@ export const loginUser = createAsyncThunk(
   async (credentials: { username: string; password: string }, { rejectWithValue }) => {
     try {
       // 首先获取CSRF令牌
-      const csrfResponse = await fetch('/api/auth/csrf-token');
+      const csrfResponse = await fetch('/api/auth/csrf');
       if (!csrfResponse.ok) {
         throw new Error('获取CSRF令牌失败');
       }
@@ -48,31 +48,23 @@ export const loginUser = createAsyncThunk(
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'X-CSRF-Token': csrfData.csrf_token,
+          'X-CSRF-Token': csrfData.csrfToken,
         },
         body: JSON.stringify(credentials),
       });
 
       if (!loginResponse.ok) {
         const errorData = await loginResponse.json();
-        throw new Error(errorData.error || '登录失败');
+        throw new Error(errorData.detail || errorData.error || '登录失败');
       }
 
       const userData = await loginResponse.json();
       
-      // 存储access token到localStorage
-      if (userData.access_token) {
-        localStorage.setItem('access_token', userData.access_token);
-      }
-      if (userData.refresh_token) {
-        localStorage.setItem('refresh_token', userData.refresh_token);
-      }
-      
       return { 
-        user: userData.user_info, // 后端返回的是user_info而不是user
-        csrfToken: userData.csrf_token || csrfData.csrf_token,
-        accessToken: userData.access_token,
-        refreshToken: userData.refresh_token
+        user: userData.user_info || userData.user, // 适配前端API路由返回的数据结构
+        csrfToken: csrfData.csrfToken,
+        accessToken: null, // 不再使用localStorage存储
+        refreshToken: null // 不再使用localStorage存储
       };
     } catch (error) {
       return rejectWithValue(error instanceof Error ? error.message : '登录失败');
@@ -85,23 +77,15 @@ export const validateSession = createAsyncThunk(
   'auth/validateSession',
   async (_, { rejectWithValue }) => {
     try {
-      const accessToken = localStorage.getItem('access_token');
-      if (!accessToken) {
-        throw new Error('未找到访问令牌');
-      }
-      
       const response = await fetch('/api/auth/validate', {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
         },
+        credentials: 'include', // 确保包含cookies
       });
       
       if (!response.ok) {
-        // 如果token无效，清除本地存储
-        localStorage.removeItem('access_token');
-        localStorage.removeItem('refresh_token');
         throw new Error('会话验证失败');
       }
       
@@ -118,31 +102,20 @@ export const logoutUser = createAsyncThunk(
   'auth/logoutUser',
   async (_, { rejectWithValue }) => {
     try {
-      const accessToken = localStorage.getItem('access_token');
-      
-      if (accessToken) {
-        const response = await fetch('/api/auth/logout', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${accessToken}`,
-            'Content-Type': 'application/json',
-          },
-        });
+      const response = await fetch('/api/auth/logout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include', // 确保包含cookies
+      });
 
-        if (!response.ok) {
-          console.warn('服务器登出失败，但仍清除本地状态');
-        }
+      if (!response.ok) {
+        console.warn('服务器登出失败');
       }
-      
-      // 无论服务器响应如何，都清除本地存储
-      localStorage.removeItem('access_token');
-      localStorage.removeItem('refresh_token');
 
       return true;
     } catch (error) {
-      // 即使出错也要清除本地存储
-      localStorage.removeItem('access_token');
-      localStorage.removeItem('refresh_token');
       return rejectWithValue(error instanceof Error ? error.message : '登出失败');
     }
   }
@@ -153,14 +126,56 @@ export const fetchCSRFToken = createAsyncThunk(
   'auth/fetchCSRFToken',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch('/api/auth/csrf-token');
+      const response = await fetch('/api/auth/csrf');
       if (!response.ok) {
         throw new Error('获取CSRF令牌失败');
       }
       const data = await response.json();
-      return data.csrf_token;
+      return data.csrfToken;
     } catch (error) {
       return rejectWithValue(error instanceof Error ? error.message : '获取CSRF令牌失败');
+    }
+  }
+);
+
+// 异步注册action
+export const registerUser = createAsyncThunk(
+  'auth/registerUser',
+  async (credentials: { username: string; email: string; password: string }, { rejectWithValue }) => {
+    try {
+      // 首先获取CSRF令牌
+      const csrfResponse = await fetch('/api/auth/csrf');
+      if (!csrfResponse.ok) {
+        throw new Error('获取CSRF令牌失败');
+      }
+      const csrfData = await csrfResponse.json();
+      
+      // 执行注册
+      const registerResponse = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': csrfData.csrfToken,
+        },
+        body: JSON.stringify({
+          ...credentials,
+          csrf_token: csrfData.csrfToken
+        }),
+      });
+
+      if (!registerResponse.ok) {
+        const errorData = await registerResponse.json();
+        throw new Error(errorData.detail || errorData.message || '注册失败');
+      }
+
+      const userData = await registerResponse.json();
+      
+      return { 
+        user: userData.user_info,
+        message: userData.message || '注册成功'
+      };
+    } catch (error) {
+      return rejectWithValue(error instanceof Error ? error.message : '注册失败');
     }
   }
 );
@@ -170,19 +185,11 @@ export const initializeAuth = createAsyncThunk(
   'auth/initializeAuth',
   async (_, { dispatch, rejectWithValue }) => {
     try {
-      const accessToken = localStorage.getItem('access_token');
-      if (accessToken) {
-        // 如果有token，尝试验证会话
-        await dispatch(validateSession()).unwrap();
-        return true;
-      }
-      // 没有token时直接返回false，不抛出错误
-      return false;
+      // 直接尝试验证会话，不检查localStorage
+      await dispatch(validateSession()).unwrap();
+      return true;
     } catch (error) {
-      // 如果验证失败，清除无效token
-      localStorage.removeItem('access_token');
-      localStorage.removeItem('refresh_token');
-      // 验证失败时返回false而不是抛出错误
+      // 验证失败时静默返回false，不设置错误信息
       return false;
     }
   }
@@ -245,7 +252,10 @@ const authSlice = createSlice({
       })
       .addCase(validateSession.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload as string;
+        // 只有在已认证状态下才设置错误信息，避免未登录用户看到错误
+        if (state.isAuthenticated) {
+          state.error = action.payload as string;
+        }
         state.isAuthenticated = false;
         state.user = null;
         state.accessToken = null;
@@ -275,6 +285,20 @@ const authSlice = createSlice({
       .addCase(fetchCSRFToken.rejected, (state, action) => {
         state.error = action.payload as string;
       })
+      // 注册
+      .addCase(registerUser.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(registerUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        // 注册成功后不自动登录，用户需要手动登录
+      })
+      .addCase(registerUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload as string;
+      })
       // 初始化认证
       .addCase(initializeAuth.pending, (state) => {
         state.isLoading = true;
@@ -289,6 +313,7 @@ const authSlice = createSlice({
         state.user = null;
         state.accessToken = null;
         state.refreshToken = null;
+        // 不设置错误信息，避免未登录用户看到错误
       });
   },
 });
