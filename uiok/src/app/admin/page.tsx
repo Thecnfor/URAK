@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
+import { ProtectedLayout } from '@/components/layout/protected-layout';
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { logoutUser, initializeAuth } from '@/store/slices/authSlice';
 import { useRouter } from 'next/navigation';
 
 export default function AdminPage() {
-  const { user, isAuthenticated, isLoading } = useAppSelector((state) => state.auth);
+  const { user } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
   const router = useRouter();
 
@@ -22,37 +23,8 @@ export default function AdminPage() {
     }
   };
 
-  // 初始化认证状态
-  React.useEffect(() => {
-    dispatch(initializeAuth());
-  }, [dispatch]);
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-indigo-600"></div>
-      </div>
-    );
-  }
-
-  if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">访问被拒绝</h1>
-          <p className="text-gray-600 mb-4">您需要登录才能访问此页面。</p>
-          <button
-            onClick={() => router.push('/login')}
-            className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
-          >
-            前往登录
-          </button>
-        </div>
-      </div>
-    );
-  }
-
   return (
+    <ProtectedLayout requireRole="admin">
       <div className="min-h-screen bg-gray-50">
         {/* 顶部导航栏 */}
         <nav className="bg-white shadow-sm border-b">
@@ -145,5 +117,6 @@ export default function AdminPage() {
           </div>
         </main>
       </div>
+    </ProtectedLayout>
   );
 }

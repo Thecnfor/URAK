@@ -37,14 +37,22 @@ export default function LoginPage() {
     password: false,
   });
   
-  const redirectTo = searchParams.get('redirect') || '/admin';
+  const redirectTo = searchParams.get('redirect');
+  const user = useAppSelector((state) => state.auth.user);
 
-  // 如果已经登录，重定向到目标页面
+  // 如果已经登录，根据用户角色重定向到相应页面
   useEffect(() => {
-    if (isAuthenticated) {
-      router.push(redirectTo);
+    if (isAuthenticated && user) {
+      if (redirectTo) {
+        // 如果有指定的重定向路径，使用它
+        router.push(redirectTo);
+      } else {
+        // 根据用户角色决定默认跳转路径
+        const defaultPath = user.role === 'admin' ? '/admin' : '/dashboard';
+        router.push(defaultPath);
+      }
     }
-  }, [isAuthenticated, router, redirectTo]);
+  }, [isAuthenticated, user, router, redirectTo]);
 
   // 获取CSRF令牌
   useEffect(() => {

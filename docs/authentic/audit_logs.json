@@ -5660,11 +5660,129 @@
       },
       "session_id": "aec6a67c-f4b4-4f2d-b980-16094d4e1732",
       "request_id": null
+    },
+    {
+      "id": "03045b51-95b3-449a-86e8-e2813b119b55",
+      "timestamp": "2025-08-25T11:15:03.944817+00:00",
+      "event_type": "csrf_attack_detected",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "csrf_attack",
+      "result": "blocked",
+      "details": {
+        "error": "CSRF token required",
+        "provided_token": false
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "079d6350-e52d-43b2-b6eb-c3b349f8ee5d",
+      "timestamp": "2025-08-25T11:15:03.950550+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_403",
+      "result": "failed",
+      "details": {
+        "status_code": 403,
+        "detail": "CSRF token validation failed",
+        "path": "/api/auth/logout",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "b680189c-a600-4494-90d6-d7f7a09ce0a5",
+      "timestamp": "2025-08-25T11:15:37.918703+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "b6593953-f3eb-42c9-9f7d-a94b92fef724",
+      "username": "xrak",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T11:15:37.918682+00:00"
+      },
+      "session_id": "2cd3f7ca-8654-4179-86a8-c8f5e4daf925",
+      "request_id": null
+    },
+    {
+      "id": "210e0a80-d5b2-4ed6-9cb3-65a467f45d26",
+      "timestamp": "2025-08-25T11:16:00.216266+00:00",
+      "event_type": "csrf_attack_detected",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "csrf_attack",
+      "result": "blocked",
+      "details": {
+        "error": "CSRF token required",
+        "provided_token": false
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "21f6096b-5740-4d6c-bcc7-9ac3a4fe0aac",
+      "timestamp": "2025-08-25T11:16:00.222681+00:00",
+      "event_type": "access_denied",
+      "severity": "high",
+      "user_id": null,
+      "username": null,
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "http_403",
+      "result": "failed",
+      "details": {
+        "status_code": 403,
+        "detail": "CSRF token validation failed",
+        "path": "/api/auth/logout",
+        "method": "POST"
+      },
+      "session_id": null,
+      "request_id": null
+    },
+    {
+      "id": "35284f76-0816-48d5-842c-2bc54e175204",
+      "timestamp": "2025-08-25T11:16:18.907643+00:00",
+      "event_type": "login_success",
+      "severity": "low",
+      "user_id": "592a8299-8117-43a5-8cd0-5d1ef9d3bd00",
+      "username": "123",
+      "ip_address": "127.0.0.1",
+      "user_agent": "node",
+      "resource": null,
+      "action": "user_login",
+      "result": "success",
+      "details": {
+        "login_method": "password",
+        "timestamp": "2025-08-25T11:16:18.907619+00:00"
+      },
+      "session_id": "a6e6c140-8662-4a4c-b766-bec45f448af1",
+      "request_id": null
     }
   ],
   "metadata": {
-    "total_events": 300,
-    "last_updated": "2025-08-25T11:08:37.304015+00:00",
+    "total_events": 306,
+    "last_updated": "2025-08-25T11:16:18.909778+00:00",
     "version": "1.0"
   }
 }
